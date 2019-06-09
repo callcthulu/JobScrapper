@@ -1,0 +1,1816 @@
+<html ng-app="justJoinIt" ng-strict-dl=""><head><style type="text/css" data-tag-name="trix-editor">trix-editor:empty:not(:focus)::before {
+  content: attr(placeholder);
+  color: graytext;
+}
+
+trix-editor a[contenteditable=false] {
+  cursor: text;
+}
+
+trix-editor img {
+  max-width: 100%;
+  height: auto;
+}
+
+trix-editor [data-trix-attachment] figcaption textarea {
+  resize: none;
+}
+
+trix-editor [data-trix-attachment] figcaption textarea.trix-autoresize-clone {
+  position: absolute;
+  left: -9999px;
+  max-height: 0px;
+}
+
+trix-editor [data-trix-attachment][data-trix-mutable] figcaption:empty::before {
+  content: "Add a caption…";
+  color: graytext;
+}
+
+trix-editor [data-trix-cursor-target] {
+  display: inline-block !important;
+  width: 1px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+}
+
+trix-editor [data-trix-cursor-target=left] {
+  vertical-align: top !important;
+  margin-left: -1px !important;
+}
+
+trix-editor [data-trix-cursor-target=right] {
+  vertical-align: bottom !important;
+  margin-right: -1px !important;
+}
+trix-editor { display: block; }</style><style type="text/css" data-tag-name="trix-toolbar">trix-toolbar {
+  white-space: nowrap;
+}
+
+trix-toolbar .dialog {
+  display: none;
+}
+
+trix-toolbar .dialog.active {
+  display: block;
+}
+
+trix-toolbar .dialog input.validate:invalid {
+  background-color: #ffdddd;
+}
+
+trix-toolbar[native] {
+  display: none;
+}
+trix-toolbar { display: block; }</style><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+<title update-title="">Just Join IT - Find a better, well-paid jobs in IT. Closer than you think.</title>
+<base href="/">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+<link rel="stylesheet" media="all" href="/assets/application-546aff39777047ab90ea3db405e6ffd9345783585531f40d929020534c7c0069.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link crossorigin="" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" rel="stylesheet">
+<script async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://cdn.livechatinc.com/tracking.js"></script><script src="https://connect.facebook.net/signals/plugins/inferredEvents.js?v=2.8.51" async=""></script><script src="https://connect.facebook.net/signals/config/447601378954267?v=2.8.51&amp;r=stable" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script crossorigin="" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
+<script src="/assets/application-24a5182fe588a6669d66a3d18c5946980b30d2d0b271c0b4222a8f00e68ee8d1.js"></script>
+<link href="/apple-icon-57x57.png" rel="apple-touch-icon" sizes="57x57">
+<link href="/apple-icon-60x60.png" rel="apple-touch-icon" sizes="60x60">
+<link href="/apple-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+<link href="/apple-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+<link href="/apple-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+<link href="/apple-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+<link href="/apple-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
+<link href="/apple-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
+<link href="/apple-icon-180x180.png" rel="apple-touch-icon" sizes="180x180">
+<link href="/android-icon-192x192.png" rel="icon" sizes="192x192" type="image/png">
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png">
+<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+<link href="/manifest.json" rel="manifest">
+<meta content="#ffffff" name="msapplication-TileColor">
+<meta content="/ms-icon-144x144.png" name="msapplication-TileImage">
+<meta content="#ffffff" name="theme-color">
+<meta content="The first map of the labor market in the IT sector. We want to simplify the search process to minimum." name="description">
+<meta content="https://justjoin.it" property="og:url">
+<meta content="394883100868809" property="fb:app_id">
+<meta content="website" property="og:type">
+<meta content="Just Join IT" property="og:title">
+<meta content="Find a better, well-paid job in IT. Just around the corner." property="og:description">
+<meta content="https://bucket.justjoin.it/justjoinit-cover.png" property="og:image">
+<meta content="1200" property="og:image:width">
+<meta content="630" property="og:image:height">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="Krrhj0wkcqqVx/XODPy1AR9+3ep5uSNW6HDaw/TX8/uC5QB0x1lFDhiHK7AFOzmA1pRd0yus92Yg01KTtupuNA==">
+<link rel="alternate" type="application/atom+xml" title="ATOM" href="https://justjoin.it/feed.atom">
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '447601378954267');
+<!-- /fbq('track', 'PageView'); -->
+</script>
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=447601378954267&ev=PageView&noscript=1"
+</noscript>
+</head>
+<body id="body-top" offers-class="" class="dark-mode-enable">
+<svg xmlns="http://www.w3.org/2000/svg" style="width:0;height:0;display:block;"><defs><style>.cls-1{isolation:isolate;}.cls-2{fill-rule:evenodd;}</style></defs><symbol viewBox="0 0 70.75834 10.46692" id="shape-jb-colour"><title>jb-colour</title><g font-weight="400" font-family="sans-serif" letter-spacing="0" word-spacing="0"><g aria-label="justbrands.it" style="line-height:1.25" font-size="10.58333" stroke-width=".26458"><path d="M1.32292 10.46692q-.86784 0-1.32292-.3175L.4445 8.9535q.28575.20108.6985.20108.3175 0 .49742-.21166.17991-.20109.17991-.61384V2.63525h1.651V8.3185q0 .99483-.5715 1.56633-.56091.58209-1.57691.58209zM2.64583 1.8415q-.45508 0-.74083-.26458-.28575-.26459-.28575-.65617 0-.39158.28575-.65617Q2.19075 0 2.64583 0q.45509 0 .74084.254.28575.254.28575.635 0 .41275-.28575.68792-.28575.26458-.74084.26458zM10.7277 2.63525v5.69383H9.16136v-.67733q-.32808.37042-.78316.5715-.45509.1905-.98425.1905-1.12184 0-1.778-.64558-.65617-.64559-.65617-1.91559V2.63525h1.651v2.97392q0 1.37583 1.15358 1.37583.59267 0 .9525-.381.35984-.39158.35984-1.15358V2.63525zM14.18315 8.41375q-.70908 0-1.38641-.16933-.67734-.17992-1.0795-.4445l.55033-1.18534q.381.24342.92075.40217.53975.14817 1.05833.14817 1.04775 0 1.04775-.51859 0-.24341-.28575-.34925-.28575-.10583-.87841-.17991-.6985-.10584-1.15359-.24342-.45508-.13758-.79375-.48683-.32808-.34925-.32808-.99484 0-.53975.30692-.9525.3175-.42333.91016-.65616.60325-.23284 1.41817-.23284.60325 0 1.19592.13759.60325.127.99483.35983l-.55033 1.17475q-.75142-.42333-1.64042-.42333-.52917 0-.79375.14816-.26458.14817-.26458.381 0 .26459.28575.37042.28575.10583.91016.20108.6985.11642 1.143.254.4445.127.77259.47625.32808.34925.32808.97367 0 .52917-.3175.94192-.3175.41275-.93133.64558-.60325.22225-1.43934.22225zM21.56238 8.05392q-.24341.17991-.60325.27516-.34925.0847-.74083.0847-1.016 0-1.57692-.51858-.55033-.51859-.55033-1.524V4.03228h-.87842v-1.27h.87842V1.37586h1.651v1.38642h1.41817v1.27h-1.41817v2.31775q0 .35983.17992.56092.1905.1905.52916.1905.39159 0 .66675-.21167z"></path><path d="M25.865 2.55058q.79375 0 1.43934.37042.65616.35983 1.02658 1.02658.37042.65617.37042 1.53459 0 .87841-.37042 1.54516-.37042.65617-1.02658 1.02659-.64559.35983-1.43934.35983-1.17475 0-1.78858-.74083v.65616H22.4995V.47625h1.651V3.2385q.62442-.68792 1.7145-.68792zm-.28575 4.5085q.635 0 1.03717-.42333.41275-.43392.41275-1.15358 0-.71967-.41275-1.143-.40217-.43392-1.03717-.43392-.635 0-1.04775.43392-.40216.42333-.40216 1.143 0 .71966.40216 1.15358.41275.42333 1.04775.42333zM31.37313 3.38667q.29634-.41275.79375-.62442.508-.21167 1.16417-.21167v1.524q-.27517-.0212-.37042-.0212-.70908 0-1.11125.40216-.40216.39159-.40216 1.18534v2.68816h-1.651V2.63521h1.57691zM36.57831 2.55058q1.32292 0 2.032.635.70909.62442.70909 1.89442v3.24908h-1.54517V7.62q-.46567.79375-1.73567.79375-.65616 0-1.143-.22225-.47625-.22225-.73025-.61383-.254-.39159-.254-.889 0-.79375.59267-1.24884.60325-.45508 1.85208-.45508h1.31234q0-.53975-.32809-.8255-.32808-.29633-.98425-.29633-.45508 0-.89958.14816-.43392.13759-.74083.381l-.59267-1.15358q.46567-.32808 1.11125-.508.65617-.17992 1.34408-.17992zm-.127 4.75192q.42334 0 .75142-.1905.32808-.20108.46567-.58208v-.58209h-1.13242q-1.016 0-1.016.66675 0 .3175.24342.508.254.17992.68791.17992zM44.27438 2.55058q1.05834 0 1.70392.635.65617.635.65617 1.88384v3.25966h-1.651V5.32342q0-.67734-.29634-1.00542-.29633-.33867-.85725-.33867-.62441 0-.99483.39159-.37042.381-.37042 1.143v2.81516h-1.651V2.63525h1.57692V3.302q.32808-.35983.81492-.55033.48683-.20109 1.06891-.20109zM53.9927.47625v7.85283h-1.57692v-.65616q-.61384.74083-1.778.74083-.80434 0-1.4605-.35983-.64559-.35984-1.016-1.02659-.37042-.66675-.37042-1.54516 0-.87842.37042-1.54517.37041-.66675 1.016-1.02658.65616-.35984 1.4605-.35984 1.09008 0 1.70391.68792V.47625zm-3.06917 6.58283q.62441 0 1.03716-.42333.41275-.43392.41275-1.15358 0-.71967-.41275-1.143-.41275-.43392-1.03716-.43392-.635 0-1.04775.43392-.41275.42333-.41275 1.143 0 .71966.41275 1.15358.41275.42333 1.04775.42333zM57.426 8.41375q-.70909 0-1.38642-.16933-.67734-.17992-1.0795-.4445l.55033-1.18534q.381.24342.92075.40217.53975.14817 1.05833.14817 1.04775 0 1.04775-.51859 0-.24341-.28575-.34925-.28575-.10583-.87841-.17991-.6985-.10584-1.15359-.24342-.45508-.13758-.79375-.48683-.32808-.34925-.32808-.99484 0-.53975.30692-.9525.3175-.42333.91016-.65616.60325-.23284 1.41817-.23284.60325 0 1.19592.13759.60325.127.99483.35983l-.55033 1.17475q-.75142-.42333-1.64042-.42333-.52917 0-.79375.14816-.26458.14817-.26458.381 0 .26459.28575.37042.28575.10583.91016.20108.6985.11642 1.143.254.4445.127.77259.47625.32808.34925.32808.97367 0 .52917-.3175.94192-.3175.41275-.93133.64558-.60325.22225-1.43934.22225z" fill="#e05369"></path><path d="M61.75722 8.41375q-.43392 0-.73025-.29633-.29633-.29634-.29633-.74084 0-.45508.29633-.73025.29633-.28575.73025-.28575t.73025.28575q.29634.27517.29634.73025 0 .4445-.29634.74084-.29633.29633-.73025.29633zM63.90266 2.63525h1.651v5.69383h-1.651zm.8255-.79375q-.45508 0-.74083-.26458-.28575-.26459-.28575-.65617 0-.39158.28575-.65617Q64.27308 0 64.72816 0q.45509 0 .74084.254.28575.254.28575.635 0 .41275-.28575.68792-.28575.26458-.74084.26458zM70.75835 8.05392q-.24342.17991-.60325.27516-.34925.0847-.74084.0847-1.016 0-1.57691-.51858-.55034-.51859-.55034-1.524V4.03228h-.87841v-1.27h.8784V1.37586h1.651v1.38642h1.41818v1.27H68.938v2.31775q0 .35983.17992.56092.1905.1905.52917.1905.39158 0 .66675-.21167z"></path></g></g></symbol><symbol viewBox="0 0 70.758 10.467" id="shape-jb"><title>jb</title><g letter-spacing="0" word-spacing="0"><g aria-label="justbrands.it" style="line-height:1.25" font-weight="700" font-size="10.583" font-family="Montserrat" stroke-width=".265"><path d="M1.323 10.467q-.868 0-1.323-.318l.444-1.195q.286.2.699.2.317 0 .497-.211.18-.201.18-.614V2.635h1.651V8.32q0 .994-.571 1.566-.561.582-1.577.582zm1.323-8.625q-.455 0-.741-.265T1.619.92q0-.392.286-.656Q2.191 0 2.645 0q.456 0 .742.254.285.254.285.635 0 .413-.285.688-.286.265-.741.265zM10.728 2.635V8.33H9.16v-.677q-.328.37-.783.571-.455.19-.984.19-1.122 0-1.778-.645-.656-.645-.656-1.915V2.635h1.65V5.61q0 1.376 1.154 1.376.593 0 .953-.381.36-.392.36-1.154V2.635zM14.183 8.414q-.709 0-1.386-.17-.678-.18-1.08-.444l.55-1.185q.382.243.921.402.54.148 1.059.148 1.047 0 1.047-.519 0-.243-.285-.349-.286-.106-.879-.18-.698-.106-1.153-.243-.455-.138-.794-.487-.328-.35-.328-.995 0-.54.307-.952.317-.424.91-.657.603-.232 1.418-.232.603 0 1.196.137.603.127.995.36l-.55 1.175q-.752-.424-1.64-.424-.53 0-.795.149-.264.148-.264.38 0 .265.285.371.286.106.91.201.7.117 1.144.254.444.127.772.476.328.35.328.974 0 .53-.317.942-.318.413-.932.646-.603.222-1.439.222zM21.562 8.054q-.243.18-.603.275-.35.085-.74.085-1.017 0-1.578-.519-.55-.518-.55-1.524V4.032h-.878v-1.27h.878V1.376h1.651v1.386h1.418v1.27h-1.418V6.35q0 .36.18.56.19.191.53.191.39 0 .666-.211zM25.865 2.55q.794 0 1.44.371.656.36 1.026 1.027.37.656.37 1.534 0 .879-.37 1.545-.37.656-1.027 1.027-.645.36-1.439.36-1.175 0-1.789-.741v.656H22.5V.476h1.65v2.762q.625-.687 1.715-.687zm-.286 4.51q.635 0 1.037-.424.413-.434.413-1.154t-.413-1.143q-.402-.434-1.037-.434-.635 0-1.047.434-.403.423-.403 1.143t.403 1.154q.412.423 1.047.423zM31.373 3.387q.296-.413.794-.625.508-.211 1.164-.211v1.524q-.275-.022-.37-.022-.71 0-1.112.403-.402.391-.402 1.185v2.688h-1.65V2.635h1.576zM36.578 2.55q1.323 0 2.032.636.71.624.71 1.894v3.25h-1.546v-.71q-.465.794-1.735.794-.657 0-1.143-.223-.477-.222-.73-.613-.255-.392-.255-.89 0-.793.593-1.248.603-.455 1.852-.455h1.312q0-.54-.328-.826-.328-.296-.984-.296-.455 0-.9.148-.433.138-.74.381l-.593-1.154q.466-.328 1.111-.508.656-.18 1.344-.18zm-.127 4.752q.424 0 .752-.19.328-.201.465-.582v-.582h-1.132q-1.016 0-1.016.667 0 .317.243.508.254.18.688.18zM44.274 2.55q1.059 0 1.704.636.656.635.656 1.883v3.26h-1.65V5.323q0-.677-.297-1.005-.296-.339-.857-.339-.625 0-.995.392-.37.38-.37 1.143v2.815h-1.651V2.635h1.577v.667q.328-.36.814-.55.487-.201 1.07-.201zM53.993.476V8.33h-1.577v-.656q-.614.74-1.778.74-.805 0-1.46-.36-.646-.359-1.017-1.026-.37-.666-.37-1.545 0-.878.37-1.545.37-.667 1.016-1.027.656-.36 1.46-.36 1.09 0 1.705.688V.476zm-3.07 6.583q.625 0 1.038-.423.412-.434.412-1.154t-.412-1.143q-.413-.434-1.037-.434-.635 0-1.048.434-.413.423-.413 1.143t.413 1.154q.413.423 1.048.423zM57.426 8.414q-.71 0-1.386-.17-.678-.18-1.08-.444l.55-1.185q.381.243.921.402.54.148 1.058.148 1.048 0 1.048-.519 0-.243-.286-.349-.285-.106-.878-.18-.698-.106-1.154-.243-.455-.138-.793-.487-.328-.35-.328-.995 0-.54.307-.952.317-.424.91-.657.603-.232 1.418-.232.603 0 1.196.137.603.127.995.36l-.55 1.175q-.752-.424-1.641-.424-.53 0-.794.149-.264.148-.264.38 0 .265.285.371.286.106.91.201.699.117 1.143.254.445.127.773.476.328.35.328.974 0 .53-.317.942-.318.413-.932.646-.603.222-1.439.222zM61.757 8.414q-.434 0-.73-.297-.296-.296-.296-.74 0-.455.296-.73.296-.286.73-.286t.73.285q.297.276.297.73 0 .445-.297.741-.296.297-.73.297zM63.903 2.635h1.65V8.33h-1.65zm.825-.794q-.455 0-.74-.264-.286-.265-.286-.656 0-.392.285-.656.286-.265.741-.265t.741.254q.286.254.286.635 0 .413-.286.688-.286.264-.74.264zM70.758 8.054q-.243.18-.603.275-.35.085-.74.085-1.017 0-1.578-.519-.55-.518-.55-1.524V4.032h-.878v-1.27h.878V1.376h1.651v1.386h1.418v1.27h-1.418V6.35q0 .36.18.56.19.191.53.191.39 0 .666-.211z" style="-inkscape-font-specification:'Montserrat Bold'"></path></g></g></symbol><symbol viewBox="0 0 174.09 35.21" id="shape-logo"><title>logo</title><g id="logo-justjoin.it" class="cls-1"><g id="logo-justjoin-it" data-name="justjoin.it"><path class="cls-2" d="M8.68.1a3,3,0,0,0-3.2,3.1,3.06,3.06,0,0,0,3.2,3.1,3,3,0,0,0,3.2-3.1A3,3,0,0,0,8.68.1ZM5.94,28.43c0,1.58-.86,2.27-2.05,2.27a4.36,4.36,0,0,1-2.27-.76L.11,34a8.4,8.4,0,0,0,4.57,1.3c3.64,0,6.77-2.27,6.77-6.66V8.71H5.94Zm23.9-10.15c0,2.81-1.62,4.9-4.28,4.93-2.23,0-3.64-1.48-3.64-3.92V8.71H16.38V20.87c0,4.57,2.7,7.42,7,7.42a6.87,6.87,0,0,0,6.48-3.64v3.42h5.51V8.71H29.84ZM44.78,14c0-1,.94-1.44,2.23-1.44a13.1,13.1,0,0,1,5.9,1.87l1.91-3.78a14.44,14.44,0,0,0-7.56-2.16c-4.21,0-7.63,2.05-7.63,6,0,6.8,10,5.15,10,8.24,0,1-1,1.51-2.45,1.51a11.67,11.67,0,0,1-6.73-2.41l-1.8,3.74a13.52,13.52,0,0,0,8.39,2.7c4.39,0,7.88-2.09,7.88-6C55,15.4,44.78,16.88,44.78,14Zm24.73,9a6.44,6.44,0,0,1-2.59.72c-1.19,0-1.87-.61-1.87-2.23v-8h5.26V9.57H65.05V4.24H59.54V9.57h-2.7v3.82h2.7v9c0,4,2.63,6,6.08,6a10.31,10.31,0,0,0,5-1.33Zm4.57,5.51c0,1.58-.86,2.27-2.05,2.27a4.36,4.36,0,0,1-2.27-.76L68.25,34a8.4,8.4,0,0,0,4.57,1.3c3.64,0,6.77-2.27,6.77-6.66V8.71H74.09ZM76.82.1a3,3,0,0,0-3.2,3.1,3.06,3.06,0,0,0,3.2,3.1A3,3,0,0,0,80,3.2,3,3,0,0,0,76.82.1Zm17,8.42c-6.23,0-10.4,3.92-10.4,9.86s4.18,9.9,10.4,9.9,10.37-4,10.37-9.9S100,8.53,93.85,8.53Zm0,15.26C91,23.79,89,21.63,89,18.46s2-5.33,4.86-5.33,4.82,2.16,4.82,5.33S96.69,23.79,93.85,23.79ZM110.66,6a2.65,2.65,0,0,0,2.7-2.77,2.7,2.7,0,1,0-5.4,0A2.65,2.65,0,0,0,110.66,6Zm-2.77,22.1h5.54V8.71h-5.54ZM131,8.49c-3,0-5.33,1.19-6.7,3.6V8.71h-5.54V28.07h5.54V18.53c0-2.84,1.66-4.93,4.43-5,2.38,0,3.82,1.51,3.82,4V28.07h5.54V15.91C138.09,11.37,135.32,8.49,131,8.49Zm13.43,14.18a2.7,2.7,0,0,0-2.77,2.84,2.77,2.77,0,1,0,5.54,0A2.68,2.68,0,0,0,144.43,22.67ZM154.11,6a2.65,2.65,0,0,0,2.7-2.77,2.7,2.7,0,1,0-5.4,0A2.65,2.65,0,0,0,154.11,6Zm-2.77,22.1h5.54V8.71h-5.54ZM173,22.93a6.44,6.44,0,0,1-2.59.72c-1.19,0-1.87-.61-1.87-2.23v-8h5.26V9.57h-5.26V4.24h-5.51V9.57h-2.7v3.82h2.7v9c0,4,2.63,6,6.08,6a10.31,10.31,0,0,0,5-1.33Z" transform="translate(-0.11 -0.1)"></path></g></g></symbol></svg>
+<ul class="side-nav" id="mobile-slide-out" ng-controller="MenuController as ctrl" style="width: 250px; transform: translateX(-100%);">
+<li>
+<div class="header-logo">
+<svg>
+<use xlink:href="#shape-logo"></use>
+</svg>
+</div>
+</li>
+<li ng-class="{active: !ctrl.companyActive}" class="active">
+<a ng-click="ctrl.goHomePage()"><i class="material-icons">content_paste</i>Offers
+</a>
+</li>
+<li ng-class="{active: ctrl.companyActive}">
+<a ng-click="ctrl.goCompanies()"><i class="material-icons">business</i>Brand Stories
+</a>
+</li>
+</ul>
+<div class="header" ng-controller="MenuController as ctrl">
+<div class="header-row">
+<div class="tab-logo active" ng-class="{active: !ctrl.companyActive}">
+<div class="header-logo" ng-click="ctrl.goHomePage()">
+<svg>
+<use xlink:href="#shape-logo"></use>
+</svg>
+</div>
+</div>
+<div class="tab-logo" ng-class="{active: ctrl.companyActive}">
+<div class="header-logo just-brands-it" ng-click="ctrl.goCompanies()">
+<svg>
+<use xlink:href="#shape-jb-colour"></use>
+</svg>
+</div>
+</div>
+<span class="commercial">The biggest IT job board for Polish Devs.</span>
+<div class="menu-buttons">
+<a class="waves-effect waves btn-rounded" href="https://geek.justjoin.it" target="_blank">Magazine</a>
+<a class="waves-effect waves btn-rounded" href="http://event.justjoin.it" target="_blank">Event</a>
+<a class="waves-effect waves btn-rounded" ng-href="https://justjoin.it/brands/story/just-join-it" href="https://justjoin.it/brands/story/just-join-it">About us</a>
+<a class="waves-effect waves btn-rounded" open-livechat="">Contact</a>
+<!----><div class="add-btn-container" ui-view="addButton"><div class="add-offer-btn-container">
+  <div class="waves-effect waves btn btn-rounded" ui-sref="addOffer" href="/add-offer">
+    Post a Job
+  </div>
+</div></div>
+<ul class="side-nav right-aligned" id="slide-out" style="transform: translateX(100%);">
+<li>
+<div class="header-logo">
+<svg>
+<use xlink:href="#shape-logo"></use>
+</svg>
+</div>
+</li>
+<li>
+<a href="/users/sign_in" target="_self"><i class="material-icons">work</i>Employer Panel
+</a>
+</li>
+<li>
+<a href="https://www.facebook.com/JustJoinIT/" target="_blank">
+<div class="icon facebook icon-facebook"></div>
+JustJoinIT
+</a>
+</li>
+<li>
+<a href="https://justjoin.it/feed.atom" target="_blank"><i class="material-icons">rss_feed</i>RSS
+</a>
+</li>
+<li>
+<a href="https://bucket.justjoin.it/regulamin-just-join-it.pdf" target="_blank"><i class="material-icons">picture_as_pdf</i>Terms
+</a>
+</li>
+<li>
+<a href="https://bucket.justjoin.it/polityka-prywatnos%CC%81ci-just-join-it.pdf" target="_blank"><i class="material-icons">picture_as_pdf</i>Policy
+</a>
+</li>
+</ul>
+<a class="more-menu button-collapse" data-activates="slide-out" href="#" side-nav-btn="">
+<i class="material-icons">more_vert</i>
+</a>
+</div>
+</div>
+</div>
+<!----><div class="main-content" ui-view=""><div class="filters-bar">
+  <div class="filters">
+    <div class="places"><!----><div class="waves-effect waves btn btn-rounded" ng-class="{'active': $ctrl.selectedPlace==place}" ng-click="$ctrl.goPlace(place)" ng-repeat="place in ::$ctrl.mainPlaces">All</div><!----><div class="waves-effect waves btn btn-rounded active" ng-class="{'active': $ctrl.selectedPlace==place}" ng-click="$ctrl.goPlace(place)" ng-repeat="place in ::$ctrl.mainPlaces">Warszawa</div><!----><div class="waves-effect waves btn btn-rounded" ng-class="{'active': $ctrl.selectedPlace==place}" ng-click="$ctrl.goPlace(place)" ng-repeat="place in ::$ctrl.mainPlaces">Kraków</div><!----><div class="waves-effect waves btn btn-rounded" ng-class="{'active': $ctrl.selectedPlace==place}" ng-click="$ctrl.goPlace(place)" ng-repeat="place in ::$ctrl.mainPlaces">Wrocław</div><!----><div class="waves-effect waves btn btn-rounded" ng-class="{'active': $ctrl.selectedPlace==place}" ng-click="$ctrl.goPlace(place)" ng-repeat="place in ::$ctrl.mainPlaces">Poznań</div><!----><div class="waves-effect waves btn btn-rounded" ng-class="{'active': $ctrl.selectedPlace==place}" ng-click="$ctrl.goPlace(place)" ng-repeat="place in ::$ctrl.mainPlaces">Trójmiasto</div><!----><div class="waves-effect waves btn btn-rounded" ng-class="{'active': $ctrl.selectedPlace==place}" ng-click="$ctrl.goPlace(place)" ng-repeat="place in ::$ctrl.mainPlaces">Remote</div><!----><div class="waves-effect waves btn btn-rounded" ng-class="{'active': $ctrl.selectedPlace==place}" ng-click="$ctrl.goPlace(place)" ng-repeat="place in ::$ctrl.mainPlaces">World</div><!---->
+    <div class="waves-effect waves btn btn-rounded ng-hide" ng-class="{'active': $ctrl.selectedPlace==$ctrl.addedPlace}" ng-click="$ctrl.goPlace($ctrl.addedPlace)" ng-show="$ctrl.addedPlace"></div>
+    <dropdown class="more-place">
+      <i class="waves-effect waves material-icons more round">
+        more_horiz
+      </i>
+      
+    </dropdown>
+    <div class="right">
+      <div class="switch night-switch" id="desktop-night-switch">
+        <label>
+          <i class="material-icons"></i>
+          <input layout-switch="" type="checkbox">
+          <span class="lever"></span>
+          <i class="material-icons moon"></i>
+        </label>
+      </div>
+    </div>
+    <div class="tap-target" data-activates="desktop-night-switch" night-switch-discover="">
+      <div class="tap-target-content">
+        <h5>Night mode!</h5>
+        <p>It is a late hour, maybe you want to switch to the night mode?</p>
+      </div>
+    </div></div>
+    <div class="technologies"><div class="waves-effect waves all-btn btn btn-rounded" ng-class="{'active': $ctrl.selectedTechnology==''}" ng-click="$ctrl.selectTechnology(&quot;&quot;)">All</div>
+    <!----><div class="technology" ng-class="::{'not-main': !technology.main}" ng-click="$ctrl.selectTechnology(technology)" ng-repeat="technology in ::$ctrl.technologies">
+      <div class="btn-floating waves waves-effect javascript disabled" ng-class="{'disabled': $ctrl.selectedTechnology!='' &amp;&amp; $ctrl.selectedTechnology.value!= technology.value}">
+        <div class="icon icon-js"></div>
+      </div>
+      <span class="text">JS</span>
+    </div><!----><div class="technology" ng-class="::{'not-main': !technology.main}" ng-click="$ctrl.selectTechnology(technology)" ng-repeat="technology in ::$ctrl.technologies">
+      <div class="btn-floating waves waves-effect html disabled" ng-class="{'disabled': $ctrl.selectedTechnology!='' &amp;&amp; $ctrl.selectedTechnology.value!= technology.value}">
+        <div class="icon icon-html"></div>
+      </div>
+      <span class="text">HTML</span>
+    </div><!----><div class="technology" ng-class="::{'not-main': !technology.main}" ng-click="$ctrl.selectTechnology(technology)" ng-repeat="technology in ::$ctrl.technologies">
+      <div class="btn-floating waves waves-effect php disabled" ng-class="{'disabled': $ctrl.selectedTechnology!='' &amp;&amp; $ctrl.selectedTechnology.value!= technology.value}">
+        <div class="icon icon-php"></div>
+      </div>
+      <span class="text">PHP</span>
+    </div><!----><div class="technology" ng-class="::{'not-main': !technology.main}" ng-click="$ctrl.selectTechnology(technology)" ng-repeat="technology in ::$ctrl.technologies">
+      <div class="btn-floating waves waves-effect ruby disabled" ng-class="{'disabled': $ctrl.selectedTechnology!='' &amp;&amp; $ctrl.selectedTechnology.value!= technology.value}">
+        <div class="icon icon-ruby"></div>
+      </div>
+      <span class="text">Ruby</span>
+    </div><!----><div class="technology" ng-class="::{'not-main': !technology.main}" ng-click="$ctrl.selectTechnology(technology)" ng-repeat="technology in ::$ctrl.technologies">
+      <div class="btn-floating waves waves-effect python disabled" ng-class="{'disabled': $ctrl.selectedTechnology!='' &amp;&amp; $ctrl.selectedTechnology.value!= technology.value}">
+        <div class="icon icon-python"></div>
+      </div>
+      <span class="text">Python</span>
+    </div><!----><div class="technology" ng-class="::{'not-main': !technology.main}" ng-click="$ctrl.selectTechnology(technology)" ng-repeat="technology in ::$ctrl.technologies">
+      <div class="btn-floating waves waves-effect java disabled" ng-class="{'disabled': $ctrl.selectedTechnology!='' &amp;&amp; $ctrl.selectedTechnology.value!= technology.value}">
+        <div class="icon icon-java"></div>
+      </div>
+      <span class="text">Java</span>
+    </div><!----><div class="technology" ng-class="::{'not-main': !technology.main}" ng-click="$ctrl.selectTechnology(technology)" ng-repeat="technology in ::$ctrl.technologies">
+      <div class="btn-floating waves waves-effect net disabled" ng-class="{'disabled': $ctrl.selectedTechnology!='' &amp;&amp; $ctrl.selectedTechnology.value!= technology.value}">
+        <div class="icon icon-net"></div>
+      </div>
+      <span class="text">.Net</span>
+    </div><!----><div class="technology" ng-class="::{'not-main': !technology.main}" ng-click="$ctrl.selectTechnology(technology)" ng-repeat="technology in ::$ctrl.technologies">
+      <div class="btn-floating waves waves-effect scala disabled" ng-class="{'disabled': $ctrl.selectedTechnology!='' &amp;&amp; $ctrl.selectedTechnology.value!= technology.value}">
+        <div class="icon icon-scala"></div>
+      </div>
+      <span class="text">Scala</span>
+    </div><!----><div class="technology" ng-class="::{'not-main': !technology.main}" ng-click="$ctrl.selectTechnology(technology)" ng-repeat="technology in ::$ctrl.technologies">
+      <div class="btn-floating waves waves-effect c disabled" ng-class="{'disabled': $ctrl.selectedTechnology!='' &amp;&amp; $ctrl.selectedTechnology.value!= technology.value}">
+        <div class="icon icon-c"></div>
+      </div>
+      <span class="text">C</span>
+    </div><!----><div class="technology" ng-class="::{'not-main': !technology.main}" ng-click="$ctrl.selectTechnology(technology)" ng-repeat="technology in ::$ctrl.technologies">
+      <div class="btn-floating waves waves-effect mobile disabled" ng-class="{'disabled': $ctrl.selectedTechnology!='' &amp;&amp; $ctrl.selectedTechnology.value!= technology.value}">
+        <div class="icon icon-mobile"></div>
+      </div>
+      <span class="text">Mobile</span>
+    </div><!----><div class="technology" ng-class="::{'not-main': !technology.main}" ng-click="$ctrl.selectTechnology(technology)" ng-repeat="technology in ::$ctrl.technologies">
+      <div class="btn-floating waves waves-effect testing disabled" ng-class="{'disabled': $ctrl.selectedTechnology!='' &amp;&amp; $ctrl.selectedTechnology.value!= technology.value}">
+        <div class="icon icon-testing"></div>
+      </div>
+      <span class="text">Testing</span>
+    </div><!----><div class="technology" ng-class="::{'not-main': !technology.main}" ng-click="$ctrl.selectTechnology(technology)" ng-repeat="technology in ::$ctrl.technologies">
+      <div class="btn-floating waves waves-effect devops disabled" ng-class="{'disabled': $ctrl.selectedTechnology!='' &amp;&amp; $ctrl.selectedTechnology.value!= technology.value}">
+        <div class="icon icon-devops"></div>
+      </div>
+      <span class="text">DevOps</span>
+    </div><!----><div class="technology" ng-class="::{'not-main': !technology.main}" ng-click="$ctrl.selectTechnology(technology)" ng-repeat="technology in ::$ctrl.technologies">
+      <div class="btn-floating waves waves-effect ux disabled" ng-class="{'disabled': $ctrl.selectedTechnology!='' &amp;&amp; $ctrl.selectedTechnology.value!= technology.value}">
+        <div class="icon icon-ux"></div>
+      </div>
+      <span class="text">UX/UI</span>
+    </div><!----><div class="technology" ng-class="::{'not-main': !technology.main}" ng-click="$ctrl.selectTechnology(technology)" ng-repeat="technology in ::$ctrl.technologies">
+      <div class="btn-floating waves waves-effect pm disabled" ng-class="{'disabled': $ctrl.selectedTechnology!='' &amp;&amp; $ctrl.selectedTechnology.value!= technology.value}">
+        <div class="icon icon-pm"></div>
+      </div>
+      <span class="text">PM</span>
+    </div><!----><div class="technology" ng-class="::{'not-main': !technology.main}" ng-click="$ctrl.selectTechnology(technology)" ng-repeat="technology in ::$ctrl.technologies">
+      <div class="btn-floating waves waves-effect game disabled" ng-class="{'disabled': $ctrl.selectedTechnology!='' &amp;&amp; $ctrl.selectedTechnology.value!= technology.value}">
+        <div class="icon icon-game"></div>
+      </div>
+      <span class="text">Game</span>
+    </div><!----><div class="technology not-main" ng-class="::{'not-main': !technology.main}" ng-click="$ctrl.selectTechnology(technology)" ng-repeat="technology in ::$ctrl.technologies">
+      <div class="btn-floating waves waves-effect blockchain disabled" ng-class="{'disabled': $ctrl.selectedTechnology!='' &amp;&amp; $ctrl.selectedTechnology.value!= technology.value}">
+        <div class="icon icon-blockchain"></div>
+      </div>
+      <span class="text">Blockchain</span>
+    </div><!----><div class="technology not-main" ng-class="::{'not-main': !technology.main}" ng-click="$ctrl.selectTechnology(technology)" ng-repeat="technology in ::$ctrl.technologies">
+      <div class="btn-floating waves waves-effect security disabled" ng-class="{'disabled': $ctrl.selectedTechnology!='' &amp;&amp; $ctrl.selectedTechnology.value!= technology.value}">
+        <div class="icon icon-security"></div>
+      </div>
+      <span class="text">Security</span>
+    </div><!----><div class="technology not-main" ng-class="::{'not-main': !technology.main}" ng-click="$ctrl.selectTechnology(technology)" ng-repeat="technology in ::$ctrl.technologies">
+      <div class="btn-floating waves waves-effect data" ng-class="{'disabled': $ctrl.selectedTechnology!='' &amp;&amp; $ctrl.selectedTechnology.value!= technology.value}">
+        <div class="icon icon-data"></div>
+      </div>
+      <span class="text">Data</span>
+    </div><!----><div class="technology not-main" ng-class="::{'not-main': !technology.main}" ng-click="$ctrl.selectTechnology(technology)" ng-repeat="technology in ::$ctrl.technologies">
+      <div class="btn-floating waves waves-effect go disabled" ng-class="{'disabled': $ctrl.selectedTechnology!='' &amp;&amp; $ctrl.selectedTechnology.value!= technology.value}">
+        <div class="icon icon-go"></div>
+      </div>
+      <span class="text">Golang</span>
+    </div><!----><div class="technology not-main" ng-class="::{'not-main': !technology.main}" ng-click="$ctrl.selectTechnology(technology)" ng-repeat="technology in ::$ctrl.technologies">
+      <div class="btn-floating waves waves-effect sap disabled" ng-class="{'disabled': $ctrl.selectedTechnology!='' &amp;&amp; $ctrl.selectedTechnology.value!= technology.value}">
+        <div class="icon icon-sap"></div>
+      </div>
+      <span class="text">SAP</span>
+    </div><!----><div class="technology not-main" ng-class="::{'not-main': !technology.main}" ng-click="$ctrl.selectTechnology(technology)" ng-repeat="technology in ::$ctrl.technologies">
+      <div class="btn-floating waves waves-effect other disabled" ng-class="{'disabled': $ctrl.selectedTechnology!='' &amp;&amp; $ctrl.selectedTechnology.value!= technology.value}">
+        <div class="icon icon-other"></div>
+      </div>
+      <span class="text">Other</span>
+    </div><!---->
+    <div class="technology added" ng-click="$ctrl.selectTechnology($ctrl.addedTechnology)" ng-show="$ctrl.addedTechnology">
+      <div class="btn-floating waves waves-effect data" ng-class="{'disabled': $ctrl.selectedTechnology!='' &amp;&amp; $ctrl.selectedTechnology.value!= $ctrl.addedTechnology.value}">
+        <div class="icon icon-data"></div>
+      </div>
+      <span class="text">Data</span>
+    </div>
+    <dropdown class="more-technologies">
+      <i class="waves-effect waves material-icons more round">
+        more_horiz
+      </i>
+      
+    </dropdown>
+    <div class="right">
+      <dropdown class="salary" close-on-click="false">
+        <div class="dropdown-btn waves-effect waves btn btn-rounded" ng-class="{active: $ctrl.salaryFilterDefined()}">
+          <span>$ Salary</span>
+          <i class="material-icons">expand_more</i>
+        </div>
+        
+      </dropdown>
+      <dropdown class="exp-level">
+        <div class="dropdown-btn waves-effect waves btn btn-rounded" ng-class="{active: $ctrl.selectedExpLv}">
+          <i class="icon material-icons"></i>
+          <span>Exp. level</span>
+          <i class="material-icons">expand_more</i>
+        </div>
+        
+      </dropdown>
+    </div></div>
+  </div>
+</div>
+<div class="sidebar offers" scroll-container="">
+  <div class="sidebar-inner">
+    <!----><ui-view><div class="header-mobile">
+  <a class="more-menu button-collapse" data-activates="mobile-slide-out" edge="left" href="#" menu-width="250" side-nav-btn="">
+    <i class="material-icons">menu</i>
+  </a>
+  <div class="header-logo" ng-click="ctrl.goHomePage()">
+    <svg>
+      <use xlink:href="#shape-logo"></use>
+    </svg>
+  </div>
+  <div class="switch night-switch">
+    <label>
+      <i class="material-icons"></i>
+      <input layout-switch="" type="checkbox">
+      <span class="lever"></span>
+      <i class="material-icons moon"></i>
+    </label>
+  </div>
+</div>
+<div class="filters-list-bar">
+  <select class="browser-default place-select jj-select ng-pristine ng-untouched ng-valid ng-not-empty" name="placeSelect" ng-change="$ctrl.goPlace($ctrl.selectedPlace)" ng-model="$ctrl.selectedPlace">
+    <!----><option ng-repeat="place in ::$ctrl.places" ng-value="place" value="object:14">All</option><!----><option ng-repeat="place in ::$ctrl.places" ng-value="place" value="object:15" selected="selected">Warszawa</option><!----><option ng-repeat="place in ::$ctrl.places" ng-value="place" value="object:16">Kraków</option><!----><option ng-repeat="place in ::$ctrl.places" ng-value="place" value="object:17">Wrocław</option><!----><option ng-repeat="place in ::$ctrl.places" ng-value="place" value="object:18">Poznań</option><!----><option ng-repeat="place in ::$ctrl.places" ng-value="place" value="object:19">Trójmiasto</option><!----><option ng-repeat="place in ::$ctrl.places" ng-value="place" value="object:30">Białystok</option><!----><option ng-repeat="place in ::$ctrl.places" ng-value="place" value="object:31">Bielsko-Biała</option><!----><option ng-repeat="place in ::$ctrl.places" ng-value="place" value="object:32">Bydgoszcz</option><!----><option ng-repeat="place in ::$ctrl.places" ng-value="place" value="object:33">Częstochowa</option><!----><option ng-repeat="place in ::$ctrl.places" ng-value="place" value="object:34">Gliwice</option><!----><option ng-repeat="place in ::$ctrl.places" ng-value="place" value="object:35">Katowice</option><!----><option ng-repeat="place in ::$ctrl.places" ng-value="place" value="object:36">Kielce</option><!----><option ng-repeat="place in ::$ctrl.places" ng-value="place" value="object:37">Lublin</option><!----><option ng-repeat="place in ::$ctrl.places" ng-value="place" value="object:38">Łódź</option><!----><option ng-repeat="place in ::$ctrl.places" ng-value="place" value="object:39">Olsztyn</option><!----><option ng-repeat="place in ::$ctrl.places" ng-value="place" value="object:40">Opole</option><!----><option ng-repeat="place in ::$ctrl.places" ng-value="place" value="object:41">Toruń</option><!----><option ng-repeat="place in ::$ctrl.places" ng-value="place" value="object:42">Rzeszów</option><!----><option ng-repeat="place in ::$ctrl.places" ng-value="place" value="object:43">Szczecin</option><!----><option ng-repeat="place in ::$ctrl.places" ng-value="place" value="object:44">Zielona Góra</option><!----><option ng-repeat="place in ::$ctrl.places" ng-value="place" value="object:20">Remote</option><!----><option ng-repeat="place in ::$ctrl.places" ng-value="place" value="object:21">World</option><!---->
+  </select>
+  <select class="browser-default technology-select jj-select ng-pristine ng-untouched ng-valid ng-not-empty" name="technologySelect" ng-change="$ctrl.selectTechnology($ctrl.selectedTechnology, false)" ng-model="$ctrl.selectedTechnology">
+    <option value="">All</option>
+    <!----><option ng-repeat="technology in ::$ctrl.technologies" ng-value="technology" value="object:60">JS</option><!----><option ng-repeat="technology in ::$ctrl.technologies" ng-value="technology" value="object:61">HTML</option><!----><option ng-repeat="technology in ::$ctrl.technologies" ng-value="technology" value="object:62">PHP</option><!----><option ng-repeat="technology in ::$ctrl.technologies" ng-value="technology" value="object:63">Ruby</option><!----><option ng-repeat="technology in ::$ctrl.technologies" ng-value="technology" value="object:64">Python</option><!----><option ng-repeat="technology in ::$ctrl.technologies" ng-value="technology" value="object:65">Java</option><!----><option ng-repeat="technology in ::$ctrl.technologies" ng-value="technology" value="object:66">.Net</option><!----><option ng-repeat="technology in ::$ctrl.technologies" ng-value="technology" value="object:67">Scala</option><!----><option ng-repeat="technology in ::$ctrl.technologies" ng-value="technology" value="object:68">C</option><!----><option ng-repeat="technology in ::$ctrl.technologies" ng-value="technology" value="object:69">Mobile</option><!----><option ng-repeat="technology in ::$ctrl.technologies" ng-value="technology" value="object:70">Testing</option><!----><option ng-repeat="technology in ::$ctrl.technologies" ng-value="technology" value="object:71">DevOps</option><!----><option ng-repeat="technology in ::$ctrl.technologies" ng-value="technology" value="object:72">UX/UI</option><!----><option ng-repeat="technology in ::$ctrl.technologies" ng-value="technology" value="object:73">PM</option><!----><option ng-repeat="technology in ::$ctrl.technologies" ng-value="technology" value="object:74">Game</option><!----><option ng-repeat="technology in ::$ctrl.technologies" ng-value="technology" value="object:75">Blockchain</option><!----><option ng-repeat="technology in ::$ctrl.technologies" ng-value="technology" value="object:76">Security</option><!----><option ng-repeat="technology in ::$ctrl.technologies" ng-value="technology" value="object:77" selected="selected">Data</option><!----><option ng-repeat="technology in ::$ctrl.technologies" ng-value="technology" value="object:78">Golang</option><!----><option ng-repeat="technology in ::$ctrl.technologies" ng-value="technology" value="object:79">SAP</option><!----><option ng-repeat="technology in ::$ctrl.technologies" ng-value="technology" value="object:80">Other</option><!---->
+  </select>
+</div>
+<!---->
+<offers-list offer-mouse-enter="$ctrl.offerEnter(offer)" offer-mouse-leave="$ctrl.offerLeave(offer)" offers="$ctrl.filteredOffers" split-index="$ctrl.otherPlaceOffersIndex" technology-name="$ctrl.selectedTechnology.name"><ul class="offers-list" infinite-scroll-container="$ctrl.listContainer" infinite-scroll-distance="1" infinite-scroll="$ctrl.addMoreItems()">
+  <!----><li class="offer-item data" mouse-enter="$ctrl.offerMouseEnter({offer: offer})" mouse-leave="$ctrl.offerMouseLeave({offer: offer})" ng-class="[offer.markerIcon,{'first-other-place-item': $ctrl.splitIndex == $index}]" ng-repeat="offer in $ctrl.limitedOffers track by offer.id+($ctrl.splitIndex == $index)" repeat-end="$ctrl.scrollToLookingOffer()" save-top-when="false" save-top="$ctrl.saveLookingOfferTop(top)" style="">
+    <!---->
+    <offer-item offer-click="$ctrl.goToOffer(offer)" offer="offer"><div class="item-border"></div>
+<a class="item" target="" ui-sref="offers.detail({id: $ctrl.offer.id, fromList: true})" href="/offers/360-digital-natives-data-analyst-with-python">
+  <div class="company-logo-container">
+    <img class="company-logo" ng-src="https://bucket.justjoin.it/offers/company_logos/thumb/63b55bf87f0fa9648a574f7008a91765c6296127.png?1559145332" src="https://bucket.justjoin.it/offers/company_logos/thumb/63b55bf87f0fa9648a574f7008a91765c6296127.png?1559145332">
+  </div>
+  <div class="item-row">
+    <div class="primary-line">
+      <span class="title">
+        Data Analyst with Python
+      </span>
+      <!---->
+      <div class="flex-right">
+        <span class="salary-row">
+          <!----><span class="salary" ng-if="::$ctrl.offer.salaryFrom!=null">8 000 - 13 000 PLN</span><!---->
+          <!---->
+        </span>
+        <span class="age new" ng-class="::{ 'new':$ctrl.offer.isNew() }">New</span>
+      </div>
+    </div>
+    <div class="secondary-line">
+      <span class="company-info">
+        <span class="company-name">
+          <i class="material-icons company-icon">
+            
+          </i>
+          360 Digital Natives
+        </span>
+        <span class="company-address">
+          <i class="material-icons marker-icon">
+            
+          </i>
+          Żaryna, Warszawa
+        </span>
+      </span>
+      <div class="tags">
+        <!---->
+        <!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Python</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Analytical skills</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">English</span><!---->
+      </div>
+    </div>
+  </div>
+</a></offer-item>
+  </li><!----><li class="offer-item data" mouse-enter="$ctrl.offerMouseEnter({offer: offer})" mouse-leave="$ctrl.offerMouseLeave({offer: offer})" ng-class="[offer.markerIcon,{'first-other-place-item': $ctrl.splitIndex == $index}]" ng-repeat="offer in $ctrl.limitedOffers track by offer.id+($ctrl.splitIndex == $index)" repeat-end="$ctrl.scrollToLookingOffer()" save-top-when="false" save-top="$ctrl.saveLookingOfferTop(top)">
+    <!---->
+    <offer-item offer-click="$ctrl.goToOffer(offer)" offer="offer"><div class="item-border"></div>
+<a class="item" target="" ui-sref="offers.detail({id: $ctrl.offer.id, fromList: true})" href="/offers/infinitedata-etl-developer-warszawa">
+  <div class="company-logo-container">
+    <img class="company-logo" ng-src="https://bucket.justjoin.it/offers/company_logos/thumb/f289f931cb852db9791f4d4b894bc3e63ba2a209.png?1559028625" src="https://bucket.justjoin.it/offers/company_logos/thumb/f289f931cb852db9791f4d4b894bc3e63ba2a209.png?1559028625">
+  </div>
+  <div class="item-row">
+    <div class="primary-line">
+      <span class="title">
+        ETL Developer
+      </span>
+      <!---->
+      <div class="flex-right">
+        <span class="salary-row">
+          <!----><span class="salary" ng-if="::$ctrl.offer.salaryFrom!=null">7 000 - 12 000 PLN</span><!---->
+          <!---->
+        </span>
+        <span class="age" ng-class="::{ 'new':$ctrl.offer.isNew() }">1d ago</span>
+      </div>
+    </div>
+    <div class="secondary-line">
+      <span class="company-info">
+        <span class="company-name">
+          <i class="material-icons company-icon">
+            
+          </i>
+          InfiniteDATA
+        </span>
+        <span class="company-address">
+          <i class="material-icons marker-icon">
+            
+          </i>
+          Nowogrodzka, 50/54 / 601, Warszawa
+        </span>
+      </span>
+      <div class="tags">
+        <!---->
+        <!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">ETL tools</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">ETL</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">SQL</span><!---->
+      </div>
+    </div>
+  </div>
+</a></offer-item>
+  </li><!----><li class="offer-item data" mouse-enter="$ctrl.offerMouseEnter({offer: offer})" mouse-leave="$ctrl.offerMouseLeave({offer: offer})" ng-class="[offer.markerIcon,{'first-other-place-item': $ctrl.splitIndex == $index}]" ng-repeat="offer in $ctrl.limitedOffers track by offer.id+($ctrl.splitIndex == $index)" repeat-end="$ctrl.scrollToLookingOffer()" save-top-when="false" save-top="$ctrl.saveLookingOfferTop(top)">
+    <!---->
+    <offer-item offer-click="$ctrl.goToOffer(offer)" offer="offer"><div class="item-border"></div>
+<a class="item" target="" ui-sref="offers.detail({id: $ctrl.offer.id, fromList: true})" href="/offers/prodata-consult-big-data-developer">
+  <div class="company-logo-container">
+    <img class="company-logo" ng-src="https://bucket.justjoin.it/offers/company_logos/thumb/089e12a3d9cd34a4b4a9c6a9d688b641f275f9b4.png?1559914185" src="https://bucket.justjoin.it/offers/company_logos/thumb/089e12a3d9cd34a4b4a9c6a9d688b641f275f9b4.png?1559914185">
+  </div>
+  <div class="item-row">
+    <div class="primary-line">
+      <span class="title">
+        Big Data Developer
+      </span>
+      <!---->
+      <div class="flex-right">
+        <span class="salary-row">
+          <!----><span class="salary" ng-if="::$ctrl.offer.salaryFrom!=null">17 600 - 20 800 PLN</span><!---->
+          <!---->
+        </span>
+        <span class="age" ng-class="::{ 'new':$ctrl.offer.isNew() }">1d ago</span>
+      </div>
+    </div>
+    <div class="secondary-line">
+      <span class="company-info">
+        <span class="company-name">
+          <i class="material-icons company-icon">
+            
+          </i>
+          ProData Consult
+        </span>
+        <span class="company-address">
+          <i class="material-icons marker-icon">
+            
+          </i>
+          Daimlera, Warszawa
+        </span>
+      </span>
+      <div class="tags">
+        <!---->
+        <!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Apache Spark</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Apache Hadoop</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Scala</span><!---->
+      </div>
+    </div>
+  </div>
+</a></offer-item>
+  </li><!----><li class="offer-item data" mouse-enter="$ctrl.offerMouseEnter({offer: offer})" mouse-leave="$ctrl.offerMouseLeave({offer: offer})" ng-class="[offer.markerIcon,{'first-other-place-item': $ctrl.splitIndex == $index}]" ng-repeat="offer in $ctrl.limitedOffers track by offer.id+($ctrl.splitIndex == $index)" repeat-end="$ctrl.scrollToLookingOffer()" save-top-when="false" save-top="$ctrl.saveLookingOfferTop(top)">
+    <!---->
+    <offer-item offer-click="$ctrl.goToOffer(offer)" offer="offer"><div class="item-border"></div>
+<a class="item" target="" ui-sref="offers.detail({id: $ctrl.offer.id, fromList: true})" href="/offers/gwhuman-dla-klienta-data-engineer">
+  <div class="company-logo-container">
+    <img class="company-logo" ng-src="https://bucket.justjoin.it/offers/company_logos/thumb/3ced8faca891bd8a5faa79b05074375cd7088014.png?1555517141" src="https://bucket.justjoin.it/offers/company_logos/thumb/3ced8faca891bd8a5faa79b05074375cd7088014.png?1555517141">
+  </div>
+  <div class="item-row">
+    <div class="primary-line">
+      <span class="title">
+        Data Engineer
+      </span>
+      <!---->
+      <div class="flex-right">
+        <span class="salary-row">
+          <!----><span class="salary" ng-if="::$ctrl.offer.salaryFrom!=null">11 000 - 13 500 PLN</span><!---->
+          <!---->
+        </span>
+        <span class="age" ng-class="::{ 'new':$ctrl.offer.isNew() }">2d ago</span>
+      </div>
+    </div>
+    <div class="secondary-line">
+      <span class="company-info">
+        <span class="company-name">
+          <i class="material-icons company-icon">
+            
+          </i>
+          GWHuman dla klienta
+        </span>
+        <span class="company-address">
+          <i class="material-icons marker-icon">
+            
+          </i>
+          Al. Jerozolimskie 56C, Warszawa
+        </span>
+      </span>
+      <div class="tags">
+        <!---->
+        <!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">SQL</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Git</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Agile</span><!---->
+      </div>
+    </div>
+  </div>
+</a></offer-item>
+  </li><!----><li class="offer-item data" mouse-enter="$ctrl.offerMouseEnter({offer: offer})" mouse-leave="$ctrl.offerMouseLeave({offer: offer})" ng-class="[offer.markerIcon,{'first-other-place-item': $ctrl.splitIndex == $index}]" ng-repeat="offer in $ctrl.limitedOffers track by offer.id+($ctrl.splitIndex == $index)" repeat-end="$ctrl.scrollToLookingOffer()" save-top-when="false" save-top="$ctrl.saveLookingOfferTop(top)">
+    <!---->
+    <offer-item offer-click="$ctrl.goToOffer(offer)" offer="offer"><div class="item-border"></div>
+<a class="item" target="" ui-sref="offers.detail({id: $ctrl.offer.id, fromList: true})" href="/offers/iiit-data-scientist">
+  <div class="company-logo-container">
+    <img class="company-logo" ng-src="https://bucket.justjoin.it/offers/company_logos/thumb/0d38a41115d70119078988e87fab985c73e8305b.jpg?1554299774" src="https://bucket.justjoin.it/offers/company_logos/thumb/0d38a41115d70119078988e87fab985c73e8305b.jpg?1554299774">
+  </div>
+  <div class="item-row">
+    <div class="primary-line">
+      <span class="title">
+        Data Scientist
+      </span>
+      <!---->
+      <div class="flex-right">
+        <span class="salary-row">
+          <!----><span class="salary" ng-if="::$ctrl.offer.salaryFrom!=null">12 000 - 16 000 PLN</span><!---->
+          <!---->
+        </span>
+        <span class="age" ng-class="::{ 'new':$ctrl.offer.isNew() }">2d ago</span>
+      </div>
+    </div>
+    <div class="secondary-line">
+      <span class="company-info">
+        <span class="company-name">
+          <i class="material-icons company-icon">
+            
+          </i>
+          IIIT
+        </span>
+        <span class="company-address">
+          <i class="material-icons marker-icon">
+            
+          </i>
+          Marszałkowska 89, Warszawa
+        </span>
+      </span>
+      <div class="tags">
+        <!---->
+        <!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Statistics</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Data Science</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Machine Learning</span><!---->
+      </div>
+    </div>
+  </div>
+</a></offer-item>
+  </li><!----><li class="offer-item data" mouse-enter="$ctrl.offerMouseEnter({offer: offer})" mouse-leave="$ctrl.offerMouseLeave({offer: offer})" ng-class="[offer.markerIcon,{'first-other-place-item': $ctrl.splitIndex == $index}]" ng-repeat="offer in $ctrl.limitedOffers track by offer.id+($ctrl.splitIndex == $index)" repeat-end="$ctrl.scrollToLookingOffer()" save-top-when="false" save-top="$ctrl.saveLookingOfferTop(top)">
+    <!---->
+    <offer-item offer-click="$ctrl.goToOffer(offer)" offer="offer"><div class="item-border"></div>
+<a class="item" target="" ui-sref="offers.detail({id: $ctrl.offer.id, fromList: true})" href="/offers/onwelo-s-a-dwh-developer">
+  <div class="company-logo-container">
+    <img class="company-logo" ng-src="https://bucket.justjoin.it/offers/company_logos/thumb/c562c6f1432506be3cf2787b967364302cabd1e8.jpg?1558095740" src="https://bucket.justjoin.it/offers/company_logos/thumb/c562c6f1432506be3cf2787b967364302cabd1e8.jpg?1558095740">
+  </div>
+  <div class="item-row">
+    <div class="primary-line">
+      <span class="title">
+        DWH Developer
+      </span>
+      <!---->
+      <div class="flex-right">
+        <span class="salary-row">
+          <!----><span class="salary" ng-if="::$ctrl.offer.salaryFrom!=null">10 000 - 15 000 PLN</span><!---->
+          <!---->
+        </span>
+        <span class="age" ng-class="::{ 'new':$ctrl.offer.isNew() }">2d ago</span>
+      </div>
+    </div>
+    <div class="secondary-line">
+      <span class="company-info">
+        <span class="company-name">
+          <i class="material-icons company-icon">
+            
+          </i>
+          Onwelo S.A.
+        </span>
+        <span class="company-address">
+          <i class="material-icons marker-icon">
+            
+          </i>
+          Karolkowa 30, Warszawa
+        </span>
+      </span>
+      <div class="tags">
+        <!---->
+        <!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Oracle</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">SQL</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Teradata</span><!---->
+      </div>
+    </div>
+  </div>
+</a></offer-item>
+  </li><!----><li class="offer-item data" mouse-enter="$ctrl.offerMouseEnter({offer: offer})" mouse-leave="$ctrl.offerMouseLeave({offer: offer})" ng-class="[offer.markerIcon,{'first-other-place-item': $ctrl.splitIndex == $index}]" ng-repeat="offer in $ctrl.limitedOffers track by offer.id+($ctrl.splitIndex == $index)" repeat-end="$ctrl.scrollToLookingOffer()" save-top-when="false" save-top="$ctrl.saveLookingOfferTop(top)">
+    <!---->
+    <offer-item offer-click="$ctrl.goToOffer(offer)" offer="offer"><div class="item-border"></div>
+<a class="item" target="" ui-sref="offers.detail({id: $ctrl.offer.id, fromList: true})" href="/offers/wealtharc-data-quality-analyst-21d290ac-1e98-470a-b183-af70e7359ae5">
+  <div class="company-logo-container">
+    <img class="company-logo" ng-src="https://bucket.justjoin.it/offers/company_logos/thumb/50ab73ddde01cd9eb4119ec3cef39e1fab356d4a.png?1543236164" src="https://bucket.justjoin.it/offers/company_logos/thumb/50ab73ddde01cd9eb4119ec3cef39e1fab356d4a.png?1543236164">
+  </div>
+  <div class="item-row">
+    <div class="primary-line">
+      <span class="title">
+        Data&amp;Quality Analyst
+      </span>
+      <!---->
+      <div class="flex-right">
+        <span class="salary-row">
+          <!----><span class="salary" ng-if="::$ctrl.offer.salaryFrom!=null">6 000 - 9 000 PLN</span><!---->
+          <!---->
+        </span>
+        <span class="age" ng-class="::{ 'new':$ctrl.offer.isNew() }">3d ago</span>
+      </div>
+    </div>
+    <div class="secondary-line">
+      <span class="company-info">
+        <span class="company-name">
+          <i class="material-icons company-icon">
+            
+          </i>
+          WealthArc
+        </span>
+        <span class="company-address">
+          <i class="material-icons marker-icon">
+            
+          </i>
+          Plac Piłsudskiego 3, Warszawa
+        </span>
+      </span>
+      <div class="tags">
+        <!---->
+        <!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">SQL</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Financial Products</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Excel</span><!---->
+      </div>
+    </div>
+  </div>
+</a></offer-item>
+  </li><!----><li class="offer-item data" mouse-enter="$ctrl.offerMouseEnter({offer: offer})" mouse-leave="$ctrl.offerMouseLeave({offer: offer})" ng-class="[offer.markerIcon,{'first-other-place-item': $ctrl.splitIndex == $index}]" ng-repeat="offer in $ctrl.limitedOffers track by offer.id+($ctrl.splitIndex == $index)" repeat-end="$ctrl.scrollToLookingOffer()" save-top-when="false" save-top="$ctrl.saveLookingOfferTop(top)">
+    <!---->
+    <offer-item offer-click="$ctrl.goToOffer(offer)" offer="offer"><div class="item-border"></div>
+<a class="item" target="" ui-sref="offers.detail({id: $ctrl.offer.id, fromList: true})" href="/offers/7n-junior-bi-developer">
+  <div class="company-logo-container">
+    <img class="company-logo" ng-src="https://bucket.justjoin.it/offers/company_logos/thumb/10081271b6235d738b7d0dc7145862263339410e.png?1559303705" src="https://bucket.justjoin.it/offers/company_logos/thumb/10081271b6235d738b7d0dc7145862263339410e.png?1559303705">
+  </div>
+  <div class="item-row">
+    <div class="primary-line">
+      <span class="title">
+        Junior BI Developer
+      </span>
+      <!---->
+      <div class="flex-right">
+        <span class="salary-row">
+          <!----><span class="salary" ng-if="::$ctrl.offer.salaryFrom!=null">14 280 - 16 800 PLN</span><!---->
+          <!---->
+        </span>
+        <span class="age" ng-class="::{ 'new':$ctrl.offer.isNew() }">3d ago</span>
+      </div>
+    </div>
+    <div class="secondary-line">
+      <span class="company-info">
+        <span class="company-name">
+          <i class="material-icons company-icon">
+            
+          </i>
+          7N
+        </span>
+        <span class="company-address">
+          <i class="material-icons marker-icon">
+            
+          </i>
+          Puławska 182, Warszawa
+        </span>
+      </span>
+      <div class="tags">
+        <!---->
+        <!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">SSIS</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">T-SQL</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">SQL Server</span><!---->
+      </div>
+    </div>
+  </div>
+</a></offer-item>
+  </li><!----><li class="offer-item data" mouse-enter="$ctrl.offerMouseEnter({offer: offer})" mouse-leave="$ctrl.offerMouseLeave({offer: offer})" ng-class="[offer.markerIcon,{'first-other-place-item': $ctrl.splitIndex == $index}]" ng-repeat="offer in $ctrl.limitedOffers track by offer.id+($ctrl.splitIndex == $index)" repeat-end="$ctrl.scrollToLookingOffer()" save-top-when="false" save-top="$ctrl.saveLookingOfferTop(top)">
+    <!---->
+    <offer-item offer-click="$ctrl.goToOffer(offer)" offer="offer"><div class="item-border"></div>
+<a class="item" target="" ui-sref="offers.detail({id: $ctrl.offer.id, fromList: true})" href="/offers/primaris-pl-sql-developer-warszawa">
+  <div class="company-logo-container">
+    <img class="company-logo" ng-src="https://bucket.justjoin.it/offers/company_logos/thumb/0e8d3788bdb2a236e9103146746a5665e485f1d4.jpg?1554381041" src="https://bucket.justjoin.it/offers/company_logos/thumb/0e8d3788bdb2a236e9103146746a5665e485f1d4.jpg?1554381041">
+  </div>
+  <div class="item-row">
+    <div class="primary-line">
+      <span class="title">
+        PL/SQL Developer
+      </span>
+      <!---->
+      <div class="flex-right">
+        <span class="salary-row">
+          <!----><span class="salary" ng-if="::$ctrl.offer.salaryFrom!=null">8 000 - 14 000 PLN</span><!---->
+          <!---->
+        </span>
+        <span class="age" ng-class="::{ 'new':$ctrl.offer.isNew() }">4d ago</span>
+      </div>
+    </div>
+    <div class="secondary-line">
+      <span class="company-info">
+        <span class="company-name">
+          <i class="material-icons company-icon">
+            
+          </i>
+          Primaris
+        </span>
+        <span class="company-address">
+          <i class="material-icons marker-icon">
+            
+          </i>
+          Rodziny Hiszpańskich, Warszawa
+        </span>
+      </span>
+      <div class="tags">
+        <!---->
+        <!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">SQL</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Oracle Forms</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Oracle Database 11g</span><!---->
+      </div>
+    </div>
+  </div>
+</a></offer-item>
+  </li><!----><li class="offer-item data" mouse-enter="$ctrl.offerMouseEnter({offer: offer})" mouse-leave="$ctrl.offerMouseLeave({offer: offer})" ng-class="[offer.markerIcon,{'first-other-place-item': $ctrl.splitIndex == $index}]" ng-repeat="offer in $ctrl.limitedOffers track by offer.id+($ctrl.splitIndex == $index)" repeat-end="$ctrl.scrollToLookingOffer()" save-top-when="false" save-top="$ctrl.saveLookingOfferTop(top)">
+    <!---->
+    <offer-item offer-click="$ctrl.goToOffer(offer)" offer="offer"><div class="item-border"></div>
+<a class="item" target="" ui-sref="offers.detail({id: $ctrl.offer.id, fromList: true})" href="/offers/dahliamatic-sp-z-o-o-database-developer-oracle-ebs">
+  <div class="company-logo-container">
+    <img class="company-logo" ng-src="https://bucket.justjoin.it/offers/company_logos/thumb/c2e38fbdead104294d6307564543347c2a90cc1b.jpg?1559645501" src="https://bucket.justjoin.it/offers/company_logos/thumb/c2e38fbdead104294d6307564543347c2a90cc1b.jpg?1559645501">
+  </div>
+  <div class="item-row">
+    <div class="primary-line">
+      <span class="title">
+        Database Developer (Oracle EBS)
+      </span>
+      <!---->
+      <div class="flex-right">
+        <span class="salary-row">
+          <!----><span class="salary" ng-if="::$ctrl.offer.salaryFrom!=null">9 000 - 18 000 PLN</span><!---->
+          <!---->
+        </span>
+        <span class="age" ng-class="::{ 'new':$ctrl.offer.isNew() }">4d ago</span>
+      </div>
+    </div>
+    <div class="secondary-line">
+      <span class="company-info">
+        <span class="company-name">
+          <i class="material-icons company-icon">
+            
+          </i>
+          DahliaMatic Sp. z o.o.
+        </span>
+        <span class="company-address">
+          <i class="material-icons marker-icon">
+            
+          </i>
+          02-460, Warszawa
+        </span>
+      </span>
+      <div class="tags">
+        <!---->
+        <!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">PL/SQL</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">SQL</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Polish</span><!---->
+      </div>
+    </div>
+  </div>
+</a></offer-item>
+  </li><!----><li class="offer-item data" mouse-enter="$ctrl.offerMouseEnter({offer: offer})" mouse-leave="$ctrl.offerMouseLeave({offer: offer})" ng-class="[offer.markerIcon,{'first-other-place-item': $ctrl.splitIndex == $index}]" ng-repeat="offer in $ctrl.limitedOffers track by offer.id+($ctrl.splitIndex == $index)" repeat-end="$ctrl.scrollToLookingOffer()" save-top-when="false" save-top="$ctrl.saveLookingOfferTop(top)">
+    <!---->
+    <offer-item offer-click="$ctrl.goToOffer(offer)" offer="offer"><div class="item-border"></div>
+<a class="item" target="" ui-sref="offers.detail({id: $ctrl.offer.id, fromList: true})" href="/offers/lingaro-business-intelligence-consultant">
+  <div class="company-logo-container">
+    <img class="company-logo" ng-src="https://bucket.justjoin.it/offers/company_logos/thumb/fa4df90da0a16514bc6d7ec50326ab7604739955.jpg?1550742565" src="https://bucket.justjoin.it/offers/company_logos/thumb/fa4df90da0a16514bc6d7ec50326ab7604739955.jpg?1550742565">
+  </div>
+  <div class="item-row">
+    <div class="primary-line">
+      <span class="title">
+        Business Intelligence Consultant
+      </span>
+      <!---->
+      <div class="flex-right">
+        <span class="salary-row">
+          <!----><span class="salary" ng-if="::$ctrl.offer.salaryFrom!=null">4 000 - 8 000 PLN</span><!---->
+          <!---->
+        </span>
+        <span class="age" ng-class="::{ 'new':$ctrl.offer.isNew() }">6d ago</span>
+      </div>
+    </div>
+    <div class="secondary-line">
+      <span class="company-info">
+        <span class="company-name">
+          <i class="material-icons company-icon">
+            
+          </i>
+          Lingaro
+        </span>
+        <span class="company-address">
+          <i class="material-icons marker-icon">
+            
+          </i>
+          Domaniewska 28, Warszawa
+        </span>
+      </span>
+      <div class="tags">
+        <!---->
+        <!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">BI</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">SQL</span><!---->
+      </div>
+    </div>
+  </div>
+</a></offer-item>
+  </li><!----><li class="offer-item data" mouse-enter="$ctrl.offerMouseEnter({offer: offer})" mouse-leave="$ctrl.offerMouseLeave({offer: offer})" ng-class="[offer.markerIcon,{'first-other-place-item': $ctrl.splitIndex == $index}]" ng-repeat="offer in $ctrl.limitedOffers track by offer.id+($ctrl.splitIndex == $index)" repeat-end="$ctrl.scrollToLookingOffer()" save-top-when="false" save-top="$ctrl.saveLookingOfferTop(top)">
+    <!---->
+    <offer-item offer-click="$ctrl.goToOffer(offer)" offer="offer"><div class="item-border"></div>
+<a class="item" target="" ui-sref="offers.detail({id: $ctrl.offer.id, fromList: true})" href="/offers/billennium-bi-etl-developer-fullstack">
+  <div class="company-logo-container">
+    <img class="company-logo" ng-src="https://bucket.justjoin.it/offers/company_logos/thumb/0f192c9fd8b13c602fa05b6a5dffd14cd91ea789.jpg?1558621868" src="https://bucket.justjoin.it/offers/company_logos/thumb/0f192c9fd8b13c602fa05b6a5dffd14cd91ea789.jpg?1558621868">
+  </div>
+  <div class="item-row">
+    <div class="primary-line">
+      <span class="title">
+        BI/ETL Developer (FullStack)
+      </span>
+      <!----><span class="remote" ng-if="::$ctrl.offer.remote">Remote</span><!---->
+      <div class="flex-right">
+        <span class="salary-row">
+          <!----><span class="salary" ng-if="::$ctrl.offer.salaryFrom!=null">12 000 - 16 500 PLN</span><!---->
+          <!---->
+        </span>
+        <span class="age" ng-class="::{ 'new':$ctrl.offer.isNew() }">6d ago</span>
+      </div>
+    </div>
+    <div class="secondary-line">
+      <span class="company-info">
+        <span class="company-name">
+          <i class="material-icons company-icon">
+            
+          </i>
+          Billennium
+        </span>
+        <span class="company-address">
+          <i class="material-icons marker-icon">
+            
+          </i>
+          Mangalia 2A, Warszawa
+        </span>
+      </span>
+      <div class="tags">
+        <!---->
+        <!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">SQL</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">DWH</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">ETL tools</span><!---->
+      </div>
+    </div>
+  </div>
+</a></offer-item>
+  </li><!----><li class="offer-item data" mouse-enter="$ctrl.offerMouseEnter({offer: offer})" mouse-leave="$ctrl.offerMouseLeave({offer: offer})" ng-class="[offer.markerIcon,{'first-other-place-item': $ctrl.splitIndex == $index}]" ng-repeat="offer in $ctrl.limitedOffers track by offer.id+($ctrl.splitIndex == $index)" repeat-end="$ctrl.scrollToLookingOffer()" save-top-when="false" save-top="$ctrl.saveLookingOfferTop(top)">
+    <!---->
+    <offer-item offer-click="$ctrl.goToOffer(offer)" offer="offer"><div class="item-border"></div>
+<a class="item" target="" ui-sref="offers.detail({id: $ctrl.offer.id, fromList: true})" href="/offers/billennium-big-data-specialist-admin-developer">
+  <div class="company-logo-container">
+    <img class="company-logo" ng-src="https://bucket.justjoin.it/offers/company_logos/thumb/35f300f5b7712e46549aa1cf2888935646a0102f.jpg?1558621036" src="https://bucket.justjoin.it/offers/company_logos/thumb/35f300f5b7712e46549aa1cf2888935646a0102f.jpg?1558621036">
+  </div>
+  <div class="item-row">
+    <div class="primary-line">
+      <span class="title">
+        Big Data Specialist (Admin/Developer)
+      </span>
+      <!----><span class="remote" ng-if="::$ctrl.offer.remote">Remote</span><!---->
+      <div class="flex-right">
+        <span class="salary-row">
+          <!----><span class="salary" ng-if="::$ctrl.offer.salaryFrom!=null">11 000 - 17 500 PLN</span><!---->
+          <!---->
+        </span>
+        <span class="age" ng-class="::{ 'new':$ctrl.offer.isNew() }">6d ago</span>
+      </div>
+    </div>
+    <div class="secondary-line">
+      <span class="company-info">
+        <span class="company-name">
+          <i class="material-icons company-icon">
+            
+          </i>
+          Billennium
+        </span>
+        <span class="company-address">
+          <i class="material-icons marker-icon">
+            
+          </i>
+          Mangalia 2A, Warszawa
+        </span>
+      </span>
+      <div class="tags">
+        <!---->
+        <!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Linux / Unix</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Hadoop</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Big Data</span><!---->
+      </div>
+    </div>
+  </div>
+</a></offer-item>
+  </li><!----><li class="offer-item data" mouse-enter="$ctrl.offerMouseEnter({offer: offer})" mouse-leave="$ctrl.offerMouseLeave({offer: offer})" ng-class="[offer.markerIcon,{'first-other-place-item': $ctrl.splitIndex == $index}]" ng-repeat="offer in $ctrl.limitedOffers track by offer.id+($ctrl.splitIndex == $index)" repeat-end="$ctrl.scrollToLookingOffer()" save-top-when="false" save-top="$ctrl.saveLookingOfferTop(top)">
+    <!---->
+    <offer-item offer-click="$ctrl.goToOffer(offer)" offer="offer"><div class="item-border"></div>
+<a class="item" target="" ui-sref="offers.detail({id: $ctrl.offer.id, fromList: true})" href="/offers/billennium-bi-solutions-architect">
+  <div class="company-logo-container">
+    <img class="company-logo" ng-src="https://bucket.justjoin.it/offers/company_logos/thumb/e64b094dda00e99f8b918400347c9ad388345e15.jpg?1558620284" src="https://bucket.justjoin.it/offers/company_logos/thumb/e64b094dda00e99f8b918400347c9ad388345e15.jpg?1558620284">
+  </div>
+  <div class="item-row">
+    <div class="primary-line">
+      <span class="title">
+        BI Solutions Architect
+      </span>
+      <!----><span class="remote" ng-if="::$ctrl.offer.remote">Remote</span><!---->
+      <div class="flex-right">
+        <span class="salary-row">
+          <!----><span class="salary" ng-if="::$ctrl.offer.salaryFrom!=null">16 000 - 21 000 PLN</span><!---->
+          <!---->
+        </span>
+        <span class="age" ng-class="::{ 'new':$ctrl.offer.isNew() }">6d ago</span>
+      </div>
+    </div>
+    <div class="secondary-line">
+      <span class="company-info">
+        <span class="company-name">
+          <i class="material-icons company-icon">
+            
+          </i>
+          Billennium
+        </span>
+        <span class="company-address">
+          <i class="material-icons marker-icon">
+            
+          </i>
+          Mangalia 2A, Warszawa
+        </span>
+      </span>
+      <div class="tags">
+        <!---->
+        <!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Relational Databases</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">ETL tools</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">DWH</span><!---->
+      </div>
+    </div>
+  </div>
+</a></offer-item>
+  </li><!----><li class="offer-item data" mouse-enter="$ctrl.offerMouseEnter({offer: offer})" mouse-leave="$ctrl.offerMouseLeave({offer: offer})" ng-class="[offer.markerIcon,{'first-other-place-item': $ctrl.splitIndex == $index}]" ng-repeat="offer in $ctrl.limitedOffers track by offer.id+($ctrl.splitIndex == $index)" repeat-end="$ctrl.scrollToLookingOffer()" save-top-when="false" save-top="$ctrl.saveLookingOfferTop(top)">
+    <!---->
+    <offer-item offer-click="$ctrl.goToOffer(offer)" offer="offer"><div class="item-border"></div>
+<a class="item" target="" ui-sref="offers.detail({id: $ctrl.offer.id, fromList: true})" href="/offers/westwing-data-analyst-business-intelligence">
+  <div class="company-logo-container">
+    <img class="company-logo" ng-src="https://bucket.justjoin.it/offers/company_logos/thumb/ef6be696cf7e40e15e5c7f309fd75c61936a8270.jpg?1558423808" src="https://bucket.justjoin.it/offers/company_logos/thumb/ef6be696cf7e40e15e5c7f309fd75c61936a8270.jpg?1558423808">
+  </div>
+  <div class="item-row">
+    <div class="primary-line">
+      <span class="title">
+        Data Analyst Business Intelligence (m/f)
+      </span>
+      <!---->
+      <div class="flex-right">
+        <span class="salary-row">
+          <!----><span class="salary" ng-if="::$ctrl.offer.salaryFrom!=null">7 000 - 10 000 PLN</span><!---->
+          <!---->
+        </span>
+        <span class="age" ng-class="::{ 'new':$ctrl.offer.isNew() }">8d ago</span>
+      </div>
+    </div>
+    <div class="secondary-line">
+      <span class="company-info">
+        <span class="company-name">
+          <i class="material-icons company-icon">
+            
+          </i>
+          Westwing
+        </span>
+        <span class="company-address">
+          <i class="material-icons marker-icon">
+            
+          </i>
+          ul. Twarda 18, Warszawa
+        </span>
+      </span>
+      <div class="tags">
+        <!---->
+        <!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Tableau</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">MS Excel</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">SQL</span><!---->
+      </div>
+    </div>
+  </div>
+</a></offer-item>
+  </li><!----><li class="offer-item data" mouse-enter="$ctrl.offerMouseEnter({offer: offer})" mouse-leave="$ctrl.offerMouseLeave({offer: offer})" ng-class="[offer.markerIcon,{'first-other-place-item': $ctrl.splitIndex == $index}]" ng-repeat="offer in $ctrl.limitedOffers track by offer.id+($ctrl.splitIndex == $index)" repeat-end="$ctrl.scrollToLookingOffer()" save-top-when="false" save-top="$ctrl.saveLookingOfferTop(top)">
+    <!---->
+    <offer-item offer-click="$ctrl.goToOffer(offer)" offer="offer"><div class="item-border"></div>
+<a class="item" target="" ui-sref="offers.detail({id: $ctrl.offer.id, fromList: true})" href="/offers/mymenu-data-scientist-junior-mid">
+  <div class="company-logo-container">
+    <img class="company-logo" ng-src="https://bucket.justjoin.it/offers/company_logos/thumb/edf7d09ffc92d054965a3119a4c278c6c72a58d9.jpg?1559225255" src="https://bucket.justjoin.it/offers/company_logos/thumb/edf7d09ffc92d054965a3119a4c278c6c72a58d9.jpg?1559225255">
+  </div>
+  <div class="item-row">
+    <div class="primary-line">
+      <span class="title">
+        Data Scientist (Junior/Mid)
+      </span>
+      <!---->
+      <div class="flex-right">
+        <span class="salary-row">
+          <!----><span class="salary" ng-if="::$ctrl.offer.salaryFrom!=null">6 500 - 13 000 PLN</span><!---->
+          <!---->
+        </span>
+        <span class="age" ng-class="::{ 'new':$ctrl.offer.isNew() }">9d ago</span>
+      </div>
+    </div>
+    <div class="secondary-line">
+      <span class="company-info">
+        <span class="company-name">
+          <i class="material-icons company-icon">
+            
+          </i>
+          MyMenu
+        </span>
+        <span class="company-address">
+          <i class="material-icons marker-icon">
+            
+          </i>
+          Mokotowska 1, Warszawa
+        </span>
+      </span>
+      <div class="tags">
+        <!---->
+        <!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Python</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">R</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">SQL</span><!---->
+      </div>
+    </div>
+  </div>
+</a></offer-item>
+  </li><!----><li class="offer-item data" mouse-enter="$ctrl.offerMouseEnter({offer: offer})" mouse-leave="$ctrl.offerMouseLeave({offer: offer})" ng-class="[offer.markerIcon,{'first-other-place-item': $ctrl.splitIndex == $index}]" ng-repeat="offer in $ctrl.limitedOffers track by offer.id+($ctrl.splitIndex == $index)" repeat-end="$ctrl.scrollToLookingOffer()" save-top-when="false" save-top="$ctrl.saveLookingOfferTop(top)">
+    <!---->
+    <offer-item offer-click="$ctrl.goToOffer(offer)" offer="offer"><div class="item-border"></div>
+<a class="item" target="" ui-sref="offers.detail({id: $ctrl.offer.id, fromList: true})" href="/offers/netguru-senior-data-engineer">
+  <div class="company-logo-container">
+    <img class="company-logo" ng-src="https://bucket.justjoin.it/offers/company_logos/thumb/4be9d70432921d4627644eebcd0d5dfffe419c68.png?1559211568" src="https://bucket.justjoin.it/offers/company_logos/thumb/4be9d70432921d4627644eebcd0d5dfffe419c68.png?1559211568">
+  </div>
+  <div class="item-row">
+    <div class="primary-line">
+      <span class="title">
+        Senior Data Engineer
+      </span>
+      <!----><span class="remote" ng-if="::$ctrl.offer.remote">Remote</span><!---->
+      <div class="flex-right">
+        <span class="salary-row">
+          <!----><span class="salary" ng-if="::$ctrl.offer.salaryFrom!=null">10 000 - 16 250 PLN</span><!---->
+          <!---->
+        </span>
+        <span class="age" ng-class="::{ 'new':$ctrl.offer.isNew() }">9d ago</span>
+      </div>
+    </div>
+    <div class="secondary-line">
+      <span class="company-info">
+        <span class="company-name">
+          <i class="material-icons company-icon">
+            
+          </i>
+          Netguru
+        </span>
+        <span class="company-address">
+          <i class="material-icons marker-icon">
+            
+          </i>
+          al. Jana Pawła II 29, Warszawa
+        </span>
+      </span>
+      <div class="tags">
+        <!---->
+        <!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">SQL</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Data Engineering</span><!---->
+      </div>
+    </div>
+  </div>
+</a></offer-item>
+  </li><!----><li class="offer-item data" mouse-enter="$ctrl.offerMouseEnter({offer: offer})" mouse-leave="$ctrl.offerMouseLeave({offer: offer})" ng-class="[offer.markerIcon,{'first-other-place-item': $ctrl.splitIndex == $index}]" ng-repeat="offer in $ctrl.limitedOffers track by offer.id+($ctrl.splitIndex == $index)" repeat-end="$ctrl.scrollToLookingOffer()" save-top-when="false" save-top="$ctrl.saveLookingOfferTop(top)">
+    <!---->
+    <offer-item offer-click="$ctrl.goToOffer(offer)" offer="offer"><div class="item-border"></div>
+<a class="item" target="" ui-sref="offers.detail({id: $ctrl.offer.id, fromList: true})" href="/offers/lingaro-junior-sql-developer">
+  <div class="company-logo-container">
+    <img class="company-logo" ng-src="https://bucket.justjoin.it/offers/company_logos/thumb/d8daddd20a131d420f85f547820b7dbd4f0919a9.jpg?1550073727" src="https://bucket.justjoin.it/offers/company_logos/thumb/d8daddd20a131d420f85f547820b7dbd4f0919a9.jpg?1550073727">
+  </div>
+  <div class="item-row">
+    <div class="primary-line">
+      <span class="title">
+        Junior SQL Developer
+      </span>
+      <!---->
+      <div class="flex-right">
+        <span class="salary-row">
+          <!----><span class="salary" ng-if="::$ctrl.offer.salaryFrom!=null">3 500 - 7 000 PLN</span><!---->
+          <!---->
+        </span>
+        <span class="age" ng-class="::{ 'new':$ctrl.offer.isNew() }">11d ago</span>
+      </div>
+    </div>
+    <div class="secondary-line">
+      <span class="company-info">
+        <span class="company-name">
+          <i class="material-icons company-icon">
+            
+          </i>
+          Lingaro
+        </span>
+        <span class="company-address">
+          <i class="material-icons marker-icon">
+            
+          </i>
+          Domaniewska 28, Warszawa
+        </span>
+      </span>
+      <div class="tags">
+        <!---->
+        <!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">MS SQL Server</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">SQL</span><!---->
+      </div>
+    </div>
+  </div>
+</a></offer-item>
+  </li><!----><li class="offer-item data" mouse-enter="$ctrl.offerMouseEnter({offer: offer})" mouse-leave="$ctrl.offerMouseLeave({offer: offer})" ng-class="[offer.markerIcon,{'first-other-place-item': $ctrl.splitIndex == $index}]" ng-repeat="offer in $ctrl.limitedOffers track by offer.id+($ctrl.splitIndex == $index)" repeat-end="$ctrl.scrollToLookingOffer()" save-top-when="false" save-top="$ctrl.saveLookingOfferTop(top)">
+    <!---->
+    <offer-item offer-click="$ctrl.goToOffer(offer)" offer="offer"><div class="item-border"></div>
+<a class="item" target="" ui-sref="offers.detail({id: $ctrl.offer.id, fromList: true})" href="/offers/lingaro-mlodszy-programista-oracle">
+  <div class="company-logo-container">
+    <img class="company-logo" ng-src="https://bucket.justjoin.it/offers/company_logos/thumb/d7048cad9a761646b02f52bd24cd40aa2938eade.jpg?1550842087" src="https://bucket.justjoin.it/offers/company_logos/thumb/d7048cad9a761646b02f52bd24cd40aa2938eade.jpg?1550842087">
+  </div>
+  <div class="item-row">
+    <div class="primary-line">
+      <span class="title">
+        Młodszy Programista Oracle
+      </span>
+      <!---->
+      <div class="flex-right">
+        <span class="salary-row">
+          <!----><span class="salary" ng-if="::$ctrl.offer.salaryFrom!=null">3 500 - 7 000 PLN</span><!---->
+          <!---->
+        </span>
+        <span class="age" ng-class="::{ 'new':$ctrl.offer.isNew() }">11d ago</span>
+      </div>
+    </div>
+    <div class="secondary-line">
+      <span class="company-info">
+        <span class="company-name">
+          <i class="material-icons company-icon">
+            
+          </i>
+          Lingaro
+        </span>
+        <span class="company-address">
+          <i class="material-icons marker-icon">
+            
+          </i>
+          Domaniewska 28, Warszawa
+        </span>
+      </span>
+      <div class="tags">
+        <!---->
+        <!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Azure</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">PL/SQL</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">SQL</span><!---->
+      </div>
+    </div>
+  </div>
+</a></offer-item>
+  </li><!----><li class="offer-item data" mouse-enter="$ctrl.offerMouseEnter({offer: offer})" mouse-leave="$ctrl.offerMouseLeave({offer: offer})" ng-class="[offer.markerIcon,{'first-other-place-item': $ctrl.splitIndex == $index}]" ng-repeat="offer in $ctrl.limitedOffers track by offer.id+($ctrl.splitIndex == $index)" repeat-end="$ctrl.scrollToLookingOffer()" save-top-when="false" save-top="$ctrl.saveLookingOfferTop(top)">
+    <!---->
+    <offer-item offer-click="$ctrl.goToOffer(offer)" offer="offer"><div class="item-border"></div>
+<a class="item" target="" ui-sref="offers.detail({id: $ctrl.offer.id, fromList: true})" href="/offers/itlt-database-oracle-administrator">
+  <div class="company-logo-container">
+    <img class="company-logo" ng-src="https://bucket.justjoin.it/offers/company_logos/thumb/c831babb0bf72c1c67ae92e4154109b9383aeb83.jpg?1559048596" src="https://bucket.justjoin.it/offers/company_logos/thumb/c831babb0bf72c1c67ae92e4154109b9383aeb83.jpg?1559048596">
+  </div>
+  <div class="item-row">
+    <div class="primary-line">
+      <span class="title">
+        Database Oracle Administrator
+      </span>
+      <!---->
+      <div class="flex-right">
+        <span class="salary-row">
+          <!----><span class="salary" ng-if="::$ctrl.offer.salaryFrom!=null">18 500 - 22 000 PLN</span><!---->
+          <!---->
+        </span>
+        <span class="age" ng-class="::{ 'new':$ctrl.offer.isNew() }">11d ago</span>
+      </div>
+    </div>
+    <div class="secondary-line">
+      <span class="company-info">
+        <span class="company-name">
+          <i class="material-icons company-icon">
+            
+          </i>
+          ITLT
+        </span>
+        <span class="company-address">
+          <i class="material-icons marker-icon">
+            
+          </i>
+          Wynalazek, Warszawa
+        </span>
+      </span>
+      <div class="tags">
+        <!---->
+        <!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">PL/SQL</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">PostgreSQL</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Oracle DB</span><!---->
+      </div>
+    </div>
+  </div>
+</a></offer-item>
+  </li><!----><li class="offer-item data" mouse-enter="$ctrl.offerMouseEnter({offer: offer})" mouse-leave="$ctrl.offerMouseLeave({offer: offer})" ng-class="[offer.markerIcon,{'first-other-place-item': $ctrl.splitIndex == $index}]" ng-repeat="offer in $ctrl.limitedOffers track by offer.id+($ctrl.splitIndex == $index)" repeat-end="$ctrl.scrollToLookingOffer()" save-top-when="false" save-top="$ctrl.saveLookingOfferTop(top)">
+    <!---->
+    <offer-item offer-click="$ctrl.goToOffer(offer)" offer="offer"><div class="item-border"></div>
+<a class="item" target="" ui-sref="offers.detail({id: $ctrl.offer.id, fromList: true})" href="/offers/ihire-pl-sql-developer">
+  <div class="company-logo-container">
+    <img class="company-logo" ng-src="https://bucket.justjoin.it/offers/company_logos/thumb/bcfb6c75103d7e60801fcb79b8b8a89b94fc2b6e.jpg?1558974302" src="https://bucket.justjoin.it/offers/company_logos/thumb/bcfb6c75103d7e60801fcb79b8b8a89b94fc2b6e.jpg?1558974302">
+  </div>
+  <div class="item-row">
+    <div class="primary-line">
+      <span class="title">
+        PL/SQL Developer
+      </span>
+      <!---->
+      <div class="flex-right">
+        <span class="salary-row">
+          <!----><span class="salary" ng-if="::$ctrl.offer.salaryFrom!=null">12 000 - 20 000 PLN</span><!---->
+          <!---->
+        </span>
+        <span class="age" ng-class="::{ 'new':$ctrl.offer.isNew() }">12d ago</span>
+      </div>
+    </div>
+    <div class="secondary-line">
+      <span class="company-info">
+        <span class="company-name">
+          <i class="material-icons company-icon">
+            
+          </i>
+          iHire
+        </span>
+        <span class="company-address">
+          <i class="material-icons marker-icon">
+            
+          </i>
+          Metro Wilanowska, Warszawa
+        </span>
+      </span>
+      <div class="tags">
+        <!---->
+        <!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">PL/SQL</span><!---->
+      </div>
+    </div>
+  </div>
+</a></offer-item>
+  </li><!----><li class="offer-item data" mouse-enter="$ctrl.offerMouseEnter({offer: offer})" mouse-leave="$ctrl.offerMouseLeave({offer: offer})" ng-class="[offer.markerIcon,{'first-other-place-item': $ctrl.splitIndex == $index}]" ng-repeat="offer in $ctrl.limitedOffers track by offer.id+($ctrl.splitIndex == $index)" repeat-end="$ctrl.scrollToLookingOffer()" save-top-when="false" save-top="$ctrl.saveLookingOfferTop(top)">
+    <!---->
+    <offer-item offer-click="$ctrl.goToOffer(offer)" offer="offer"><div class="item-border"></div>
+<a class="item" target="" ui-sref="offers.detail({id: $ctrl.offer.id, fromList: true})" href="/offers/astek-polska-big-data-architect">
+  <div class="company-logo-container">
+    <img class="company-logo" ng-src="https://bucket.justjoin.it/offers/company_logos/thumb/e42a001bacb287592306b125ab7220aa643beb55.png?1558953741" src="https://bucket.justjoin.it/offers/company_logos/thumb/e42a001bacb287592306b125ab7220aa643beb55.png?1558953741">
+  </div>
+  <div class="item-row">
+    <div class="primary-line">
+      <span class="title">
+        Big Data Architect
+      </span>
+      <!---->
+      <div class="flex-right">
+        <span class="salary-row">
+          <!----><span class="salary" ng-if="::$ctrl.offer.salaryFrom!=null">24 000 - 28 000 PLN</span><!---->
+          <!---->
+        </span>
+        <span class="age" ng-class="::{ 'new':$ctrl.offer.isNew() }">12d ago</span>
+      </div>
+    </div>
+    <div class="secondary-line">
+      <span class="company-info">
+        <span class="company-name">
+          <i class="material-icons company-icon">
+            
+          </i>
+          ASTEK Polska
+        </span>
+        <span class="company-address">
+          <i class="material-icons marker-icon">
+            
+          </i>
+          Daimlera, Warszawa
+        </span>
+      </span>
+      <div class="tags">
+        <!---->
+        <!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Spark</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Hadoop</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Big Data Stack</span><!---->
+      </div>
+    </div>
+  </div>
+</a></offer-item>
+  </li><!----><li class="offer-item data" mouse-enter="$ctrl.offerMouseEnter({offer: offer})" mouse-leave="$ctrl.offerMouseLeave({offer: offer})" ng-class="[offer.markerIcon,{'first-other-place-item': $ctrl.splitIndex == $index}]" ng-repeat="offer in $ctrl.limitedOffers track by offer.id+($ctrl.splitIndex == $index)" repeat-end="$ctrl.scrollToLookingOffer()" save-top-when="false" save-top="$ctrl.saveLookingOfferTop(top)">
+    <!---->
+    <offer-item offer-click="$ctrl.goToOffer(offer)" offer="offer"><div class="item-border"></div>
+<a class="item" target="" ui-sref="offers.detail({id: $ctrl.offer.id, fromList: true})" href="/offers/addepto-data-engineer">
+  <div class="company-logo-container">
+    <img class="company-logo" ng-src="https://bucket.justjoin.it/offers/company_logos/thumb/af7491e805346bd091e7d76ce1770a226a56296f.jpg?1557490242" src="https://bucket.justjoin.it/offers/company_logos/thumb/af7491e805346bd091e7d76ce1770a226a56296f.jpg?1557490242">
+  </div>
+  <div class="item-row">
+    <div class="primary-line">
+      <span class="title">
+        Data Engineer
+      </span>
+      <!---->
+      <div class="flex-right">
+        <span class="salary-row">
+          <!----><span class="salary" ng-if="::$ctrl.offer.salaryFrom!=null">8 000 - 16 000 PLN</span><!---->
+          <!---->
+        </span>
+        <span class="age" ng-class="::{ 'new':$ctrl.offer.isNew() }">14d ago</span>
+      </div>
+    </div>
+    <div class="secondary-line">
+      <span class="company-info">
+        <span class="company-name">
+          <i class="material-icons company-icon">
+            
+          </i>
+          Addepto
+        </span>
+        <span class="company-address">
+          <i class="material-icons marker-icon">
+            
+          </i>
+          Madalińskiego 20, Warszawa
+        </span>
+      </span>
+      <div class="tags">
+        <!---->
+        <!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">SQL</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">NoSQL</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Python/Scala</span><!---->
+      </div>
+    </div>
+  </div>
+</a></offer-item>
+  </li><!----><li class="offer-item data" mouse-enter="$ctrl.offerMouseEnter({offer: offer})" mouse-leave="$ctrl.offerMouseLeave({offer: offer})" ng-class="[offer.markerIcon,{'first-other-place-item': $ctrl.splitIndex == $index}]" ng-repeat="offer in $ctrl.limitedOffers track by offer.id+($ctrl.splitIndex == $index)" repeat-end="$ctrl.scrollToLookingOffer()" save-top-when="false" save-top="$ctrl.saveLookingOfferTop(top)">
+    <!---->
+    <offer-item offer-click="$ctrl.goToOffer(offer)" offer="offer"><div class="item-border"></div>
+<a class="item" target="" ui-sref="offers.detail({id: $ctrl.offer.id, fromList: true})" href="/offers/bluesoft-mlodszy-analityk-systemowy">
+  <div class="company-logo-container">
+    <img class="company-logo" ng-src="https://bucket.justjoin.it/offers/company_logos/thumb/6c261677c3ee97ba40ced48df3193bc57f92f5ea.png?1558010121" src="https://bucket.justjoin.it/offers/company_logos/thumb/6c261677c3ee97ba40ced48df3193bc57f92f5ea.png?1558010121">
+  </div>
+  <div class="item-row">
+    <div class="primary-line">
+      <span class="title">
+        Młodszy Analityk Systemowy
+      </span>
+      <!---->
+      <div class="flex-right">
+        <span class="salary-row">
+          <!----><span class="salary" ng-if="::$ctrl.offer.salaryFrom!=null">5 000 - 8 000 PLN</span><!---->
+          <!---->
+        </span>
+        <span class="age" ng-class="::{ 'new':$ctrl.offer.isNew() }">23d ago</span>
+      </div>
+    </div>
+    <div class="secondary-line">
+      <span class="company-info">
+        <span class="company-name">
+          <i class="material-icons company-icon">
+            
+          </i>
+          BlueSoft
+        </span>
+        <span class="company-address">
+          <i class="material-icons marker-icon">
+            
+          </i>
+          Al. Jerozolimskie 96, Warszawa
+        </span>
+      </span>
+      <div class="tags">
+        <!---->
+        <!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">UML</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">BPMN</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Umiejętności analityczne</span><!---->
+      </div>
+    </div>
+  </div>
+</a></offer-item>
+  </li><!----><li class="offer-item data" mouse-enter="$ctrl.offerMouseEnter({offer: offer})" mouse-leave="$ctrl.offerMouseLeave({offer: offer})" ng-class="[offer.markerIcon,{'first-other-place-item': $ctrl.splitIndex == $index}]" ng-repeat="offer in $ctrl.limitedOffers track by offer.id+($ctrl.splitIndex == $index)" repeat-end="$ctrl.scrollToLookingOffer()" save-top-when="false" save-top="$ctrl.saveLookingOfferTop(top)">
+    <!---->
+    <offer-item offer-click="$ctrl.goToOffer(offer)" offer="offer"><div class="item-border"></div>
+<a class="item" target="" ui-sref="offers.detail({id: $ctrl.offer.id, fromList: true})" href="/offers/primaris-junior-reporting-specialist-sql-warszawa">
+  <div class="company-logo-container">
+    <img class="company-logo" ng-src="https://bucket.justjoin.it/offers/company_logos/thumb/238a64d38d2c3ab42b7a084d8c61729db5cf2c0c.jpg?1557751721" src="https://bucket.justjoin.it/offers/company_logos/thumb/238a64d38d2c3ab42b7a084d8c61729db5cf2c0c.jpg?1557751721">
+  </div>
+  <div class="item-row">
+    <div class="primary-line">
+      <span class="title">
+        Junior Reporting Specialist (SQL)
+      </span>
+      <!---->
+      <div class="flex-right">
+        <span class="salary-row">
+          <!----><span class="salary" ng-if="::$ctrl.offer.salaryFrom!=null">4 000 - 8 000 PLN</span><!---->
+          <!---->
+        </span>
+        <span class="age" ng-class="::{ 'new':$ctrl.offer.isNew() }">26d ago</span>
+      </div>
+    </div>
+    <div class="secondary-line">
+      <span class="company-info">
+        <span class="company-name">
+          <i class="material-icons company-icon">
+            
+          </i>
+          Primaris
+        </span>
+        <span class="company-address">
+          <i class="material-icons marker-icon">
+            
+          </i>
+          Bukowińska 22B, Warszawa
+        </span>
+      </span>
+      <div class="tags">
+        <!---->
+        <!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Angielski</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">SQL Server Reporting Services</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">SQL</span><!---->
+      </div>
+    </div>
+  </div>
+</a></offer-item>
+  </li><!----><li class="offer-item data" mouse-enter="$ctrl.offerMouseEnter({offer: offer})" mouse-leave="$ctrl.offerMouseLeave({offer: offer})" ng-class="[offer.markerIcon,{'first-other-place-item': $ctrl.splitIndex == $index}]" ng-repeat="offer in $ctrl.limitedOffers track by offer.id+($ctrl.splitIndex == $index)" repeat-end="$ctrl.scrollToLookingOffer()" save-top-when="false" save-top="$ctrl.saveLookingOfferTop(top)">
+    <!---->
+    <offer-item offer-click="$ctrl.goToOffer(offer)" offer="offer"><div class="item-border"></div>
+<a class="item" target="" ui-sref="offers.detail({id: $ctrl.offer.id, fromList: true})" href="/offers/eos-ksi-polska-spolka-z-o-o-program-praktyk-w-dziale-it">
+  <div class="company-logo-container">
+    <img class="company-logo" ng-src="https://bucket.justjoin.it/offers/company_logos/thumb/24f8cfedadceab0e1a008d422d4bef0db188c22f.PNG?1559555426" src="https://bucket.justjoin.it/offers/company_logos/thumb/24f8cfedadceab0e1a008d422d4bef0db188c22f.PNG?1559555426">
+  </div>
+  <div class="item-row">
+    <div class="primary-line">
+      <span class="title">
+        Junior SQL Developer
+      </span>
+      <!----><span class="remote" ng-if="::$ctrl.offer.remote">Remote</span><!---->
+      <div class="flex-right">
+        <span class="salary-row">
+          <!---->
+          <!----><span class="salary" ng-if="::$ctrl.offer.salaryFrom==null">Undisclosed salary</span><!---->
+        </span>
+        <span class="age" ng-class="::{ 'new':$ctrl.offer.isNew() }">5d ago</span>
+      </div>
+    </div>
+    <div class="secondary-line">
+      <span class="company-info">
+        <span class="company-name">
+          <i class="material-icons company-icon">
+            
+          </i>
+          EOS KSI Polska Spółka z o.o.
+        </span>
+        <span class="company-address">
+          <i class="material-icons marker-icon">
+            
+          </i>
+          Bitwy warszawskiej 1920 r. 7a, Warszawa
+        </span>
+      </span>
+      <div class="tags">
+        <!---->
+        <!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Python</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">SQL</span><!---->
+      </div>
+    </div>
+  </div>
+</a></offer-item>
+  </li><!----><li class="offer-item data first-other-place-item" mouse-enter="$ctrl.offerMouseEnter({offer: offer})" mouse-leave="$ctrl.offerMouseLeave({offer: offer})" ng-class="[offer.markerIcon,{'first-other-place-item': $ctrl.splitIndex == $index}]" ng-repeat="offer in $ctrl.limitedOffers track by offer.id+($ctrl.splitIndex == $index)" repeat-end="$ctrl.scrollToLookingOffer()" save-top-when="false" save-top="$ctrl.saveLookingOfferTop(top)" style="">
+    <!----><div class="item-header" ng-if="$ctrl.splitIndex == $index">
+      <span>
+        Data
+      </span>
+      in other cities
+    </div><!---->
+    <offer-item offer-click="$ctrl.goToOffer(offer)" offer="offer"><div class="item-border"></div>
+<a class="item" target="" ui-sref="offers.detail({id: $ctrl.offer.id, fromList: true})" href="/offers/datafeedwatch-web-analyst-part-full-time">
+  <div class="company-logo-container">
+    <img class="company-logo" ng-src="https://bucket.justjoin.it/offers/company_logos/thumb/773fa37d085a9c0d1a585950325d0dfcaee7f4ce.png?1557324282" src="https://bucket.justjoin.it/offers/company_logos/thumb/773fa37d085a9c0d1a585950325d0dfcaee7f4ce.png?1557324282">
+  </div>
+  <div class="item-row">
+    <div class="primary-line">
+      <span class="title">
+        Web Analyst – part/full time
+      </span>
+      <!---->
+      <div class="flex-right">
+        <span class="salary-row">
+          <!----><span class="salary" ng-if="::$ctrl.offer.salaryFrom!=null">3 000 - 5 000 PLN</span><!---->
+          <!---->
+        </span>
+        <span class="age" ng-class="::{ 'new':$ctrl.offer.isNew() }">1d ago</span>
+      </div>
+    </div>
+    <div class="secondary-line">
+      <span class="company-info">
+        <span class="company-name">
+          <i class="material-icons company-icon">
+            
+          </i>
+          DataFeedWatch
+        </span>
+        <span class="company-address">
+          <i class="material-icons marker-icon">
+            
+          </i>
+          Przemysłowa, Kraków
+        </span>
+      </span>
+      <div class="tags">
+        <!---->
+        <!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">English</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">A/B testing</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Google Analytics</span><!---->
+      </div>
+    </div>
+  </div>
+</a></offer-item>
+  </li><!----><li class="offer-item data" mouse-enter="$ctrl.offerMouseEnter({offer: offer})" mouse-leave="$ctrl.offerMouseLeave({offer: offer})" ng-class="[offer.markerIcon,{'first-other-place-item': $ctrl.splitIndex == $index}]" ng-repeat="offer in $ctrl.limitedOffers track by offer.id+($ctrl.splitIndex == $index)" repeat-end="$ctrl.scrollToLookingOffer()" save-top-when="false" save-top="$ctrl.saveLookingOfferTop(top)">
+    <!---->
+    <offer-item offer-click="$ctrl.goToOffer(offer)" offer="offer"><div class="item-border"></div>
+<a class="item" target="" ui-sref="offers.detail({id: $ctrl.offer.id, fromList: true})" href="/offers/dotcommunity-data-engineer">
+  <div class="company-logo-container">
+    <img class="company-logo" ng-src="https://bucket.justjoin.it/offers/company_logos/thumb/740849783798ea1749e0303446c093dd359cecc8.jpg?1559901777" src="https://bucket.justjoin.it/offers/company_logos/thumb/740849783798ea1749e0303446c093dd359cecc8.jpg?1559901777">
+  </div>
+  <div class="item-row">
+    <div class="primary-line">
+      <span class="title">
+        Data Engineer
+      </span>
+      <!---->
+      <div class="flex-right">
+        <span class="salary-row">
+          <!----><span class="salary" ng-if="::$ctrl.offer.salaryFrom!=null">14 000 - 17 000 PLN</span><!---->
+          <!---->
+        </span>
+        <span class="age" ng-class="::{ 'new':$ctrl.offer.isNew() }">1d ago</span>
+      </div>
+    </div>
+    <div class="secondary-line">
+      <span class="company-info">
+        <span class="company-name">
+          <i class="material-icons company-icon">
+            
+          </i>
+          Dotcommunity
+        </span>
+        <span class="company-address">
+          <i class="material-icons marker-icon">
+            
+          </i>
+          Armii Krajowej, Kraków
+        </span>
+      </span>
+      <div class="tags">
+        <!---->
+        <!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">data storage &amp;nbsp</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">data processing &amp;nbsp</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">SQL</span><!---->
+      </div>
+    </div>
+  </div>
+</a></offer-item>
+  </li><!----><li class="offer-item data" mouse-enter="$ctrl.offerMouseEnter({offer: offer})" mouse-leave="$ctrl.offerMouseLeave({offer: offer})" ng-class="[offer.markerIcon,{'first-other-place-item': $ctrl.splitIndex == $index}]" ng-repeat="offer in $ctrl.limitedOffers track by offer.id+($ctrl.splitIndex == $index)" repeat-end="$ctrl.scrollToLookingOffer()" save-top-when="false" save-top="$ctrl.saveLookingOfferTop(top)">
+    <!---->
+    <offer-item offer-click="$ctrl.goToOffer(offer)" offer="offer"><div class="item-border"></div>
+<a class="item" target="" ui-sref="offers.detail({id: $ctrl.offer.id, fromList: true})" href="/offers/scalac-data-engineering-tech-lead">
+  <div class="company-logo-container">
+    <img class="company-logo" ng-src="https://bucket.justjoin.it/offers/company_logos/thumb/485b08142db8bb0fff774c92dd430d6480301e11.png?1549034883" src="https://bucket.justjoin.it/offers/company_logos/thumb/485b08142db8bb0fff774c92dd430d6480301e11.png?1549034883">
+  </div>
+  <div class="item-row">
+    <div class="primary-line">
+      <span class="title">
+        Data Engineering Tech Lead
+      </span>
+      <!----><span class="remote" ng-if="::$ctrl.offer.remote">Remote</span><!---->
+      <div class="flex-right">
+        <span class="salary-row">
+          <!----><span class="salary" ng-if="::$ctrl.offer.salaryFrom!=null">10 000 - 20 000 PLN</span><!---->
+          <!---->
+        </span>
+        <span class="age" ng-class="::{ 'new':$ctrl.offer.isNew() }">2d ago</span>
+      </div>
+    </div>
+    <div class="secondary-line">
+      <span class="company-info">
+        <span class="company-name">
+          <i class="material-icons company-icon">
+            
+          </i>
+          Scalac
+        </span>
+        <span class="company-address">
+          <i class="material-icons marker-icon">
+            
+          </i>
+          Czesława Miłosza 9/9, Gdańsk
+        </span>
+      </span>
+      <div class="tags">
+        <!---->
+        <!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Akka</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Java</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Scala</span><!---->
+      </div>
+    </div>
+  </div>
+</a></offer-item>
+  </li><!----><li class="offer-item data" mouse-enter="$ctrl.offerMouseEnter({offer: offer})" mouse-leave="$ctrl.offerMouseLeave({offer: offer})" ng-class="[offer.markerIcon,{'first-other-place-item': $ctrl.splitIndex == $index}]" ng-repeat="offer in $ctrl.limitedOffers track by offer.id+($ctrl.splitIndex == $index)" repeat-end="$ctrl.scrollToLookingOffer()" save-top-when="false" save-top="$ctrl.saveLookingOfferTop(top)">
+    <!---->
+    <offer-item offer-click="$ctrl.goToOffer(offer)" offer="offer"><div class="item-border"></div>
+<a class="item" target="" ui-sref="offers.detail({id: $ctrl.offer.id, fromList: true})" href="/offers/neurosys-machine-learning-researcher">
+  <div class="company-logo-container">
+    <img class="company-logo" ng-src="https://bucket.justjoin.it/offers/company_logos/thumb/d1767940afcc09ddfb1cf8fb7728c4b13ef84750.png?1557922300" src="https://bucket.justjoin.it/offers/company_logos/thumb/d1767940afcc09ddfb1cf8fb7728c4b13ef84750.png?1557922300">
+  </div>
+  <div class="item-row">
+    <div class="primary-line">
+      <span class="title">
+        Machine Learning Researcher
+      </span>
+      <!---->
+      <div class="flex-right">
+        <span class="salary-row">
+          <!----><span class="salary" ng-if="::$ctrl.offer.salaryFrom!=null">7 000 - 10 000 PLN</span><!---->
+          <!---->
+        </span>
+        <span class="age" ng-class="::{ 'new':$ctrl.offer.isNew() }">2d ago</span>
+      </div>
+    </div>
+    <div class="secondary-line">
+      <span class="company-info">
+        <span class="company-name">
+          <i class="material-icons company-icon">
+            
+          </i>
+          NeuroSYS
+        </span>
+        <span class="company-address">
+          <i class="material-icons marker-icon">
+            
+          </i>
+          Rybacka 7, Wrocław
+        </span>
+      </span>
+      <div class="tags">
+        <!---->
+        <!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Deep Learning</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Machine Learning</span><!----><span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">Python</span><!---->
+      </div>
+    </div>
+  </div>
+</a></offer-item>
+  </li><!---->
+</ul></offers-list></ui-view>
+    <div class="hide-map btn btn-floating waves-effect waves ng-hide" ng-click="$ctrl.hideMap()" ng-show="$ctrl.mobileMapVisible">
+      <i class="material-icons">arrow_back</i>
+    </div>
+    <div class="show-map-btn btn-floating waves-effect waves" ng-click="$ctrl.showMap()" ng-show="!$ctrl.mobileMapVisible">
+      <i class="material-icons">map</i>
+    </div>
+  </div>
+</div>
+<div class="map offers">
+  <div class="map-container">
+    <leaflet-map id="offers-map" class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0" style="position: relative;"><div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);"><div class="leaflet-pane leaflet-tile-pane"><div class="leaflet-layer " style="z-index: 1; opacity: 1;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 18; transform: translate3d(0px, 0px, 0px) scale(1);"><img alt="" role="presentation" src="https://api.mapbox.com/styles/v1/just-join-it/cjnvna0eq01842smwlxj9ldkj/tiles/-1/0/0?access_token=pk.eyJ1IjoianVzdC1qb2luLWl0IiwiYSI6ImNqbnZteWJ0YjAzcjgzdm5xNGF2YTJ4NXYifQ.xEtDtEMWF88wBAshCv9NgQ" class="leaflet-tile" style="width: 512px; height: 512px; transform: translate3d(-143px, -84px, 0px); opacity: 1;"></div></div></div><div class="leaflet-pane leaflet-shadow-pane"></div><div class="leaflet-pane leaflet-overlay-pane"></div><div class="leaflet-pane leaflet-marker-pane"><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(0px, 0px, 0px); z-index: 0;"></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(0px, 0px, 0px); z-index: 0;"></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(0px, 0px, 0px); z-index: 0;"><div class="count">2</div></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(0px, 0px, 0px); z-index: 0;"></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(0px, 0px, 0px); z-index: 0;"></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(0px, 0px, 0px); z-index: 0;"></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(0px, 0px, 0px); z-index: 0;"></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(0px, 0px, 0px); z-index: 0;"></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(0px, 0px, 0px); z-index: 0;"></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(0px, 0px, 0px); z-index: 0;"></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(0px, 0px, 0px); z-index: 0;"><div class="count">3</div></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(0px, 0px, 0px); z-index: 0;"><div class="count">3</div></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(0px, 0px, 0px); z-index: 0;"></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(0px, 0px, 0px); z-index: 0;"></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(0px, 0px, 0px); z-index: 0;"></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(0px, 0px, 0px); z-index: 0;"></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(0px, 0px, 0px); z-index: 0;"></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(0px, 0px, 0px); z-index: 0;"></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(0px, 0px, 0px); z-index: 0;"></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(0px, 0px, 0px); z-index: 0;"></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(0px, 0px, 0px); z-index: 0;"></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(-1px, 3px, 0px); z-index: 3;"></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(-1px, 3px, 0px); z-index: 3;"></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(-2px, -2px, 0px); z-index: -2;"><div class="count">2</div></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(-3px, 2px, 0px); z-index: 2;"></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(-1px, 3px, 0px); z-index: 3;"></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(-3px, 2px, 0px); z-index: 2;"></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(-1px, 3px, 0px); z-index: 3;"><div class="count">2</div></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(-3px, 2px, 0px); z-index: 2;"></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(-3px, 0px, 0px); z-index: 0;"></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(-3px, 2px, 0px); z-index: 2;"><div class="count">2</div></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(-1px, 1px, 0px); z-index: 1;"></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(-3px, 0px, 0px); z-index: 0;"></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(-3px, 2px, 0px); z-index: 2;"><div class="count">2</div></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(-1px, 3px, 0px); z-index: 3;"></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(-3px, 0px, 0px); z-index: 0;"></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(-3px, 2px, 0px); z-index: 2;"></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(-3px, 2px, 0px); z-index: 2;"></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(-3px, 2px, 0px); z-index: 2;"></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(-3px, 0px, 0px); z-index: 0;"></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(-1px, 3px, 0px); z-index: 3;"></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(-3px, -1px, 0px); z-index: -1;"></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(-1px, 3px, 0px); z-index: 3;"></div><div class="leaflet-marker-icon marker offer data leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(-3px, 2px, 0px); z-index: 2;"></div></div><div class="leaflet-pane leaflet-tooltip-pane"></div><div class="leaflet-pane leaflet-popup-pane"></div><div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(142.938px, 84.2944px, 0px) scale(0.5);"></div></div><div class="leaflet-control-container"><div class="leaflet-top leaflet-left"></div><div class="leaflet-top leaflet-right"></div><div class="leaflet-bottom leaflet-left"></div><div class="leaflet-bottom leaflet-right"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button" aria-label="Zoom in">+</a><a class="leaflet-control-zoom-out leaflet-disabled" href="#" title="Zoom out" role="button" aria-label="Zoom out">−</a></div><div class="leaflet-control-attribution leaflet-control"><a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> | Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a></div></div></div></leaflet-map>
+  </div>
+</div></div>
+<cookies-footer><div class="cookies-footer" ng-hide="$ctrl.policyAccept">
+  New
+  <a href="https://bucket.justjoin.it/regulamin-just-join-it.pdf" target="_blank">
+    Terms
+  </a>
+  of Services and the Just Join IT
+  <a href="https://bucket.justjoin.it/polityka-prywatnos%CC%81ci-just-join-it.pdf" target="_blank">
+    Privacy Policy
+  </a>
+  come into life on May 25, 2018.
+  <a href="https://bucket.justjoin.it/regulamin-just-join-it.pdf" target="_blank">
+    Learn more.
+  </a>
+  <div class="waves-effect waves btn btn-rounded" ng-click="$ctrl.acceptPolicy()">
+    Ok
+  </div>
+</div></cookies-footer>
+<!----><div class="footer-content" ui-view="footer"></div>
+<script>
+  // Start of LiveChat (www.livechatinc.com) code -->
+    window.__lc = window.__lc || {};
+  
+    // window.LC_tasks = window.LC_tasks || [];
+    // window.LC_tasks.push(['set_customer_details', { name: 'Test Karo', email: 'mail@example.com', EXAMPLE_PROPERTY1:"VALUE",          EXAMPLE_PROPERTY2:"VALUE"}])
+    // window.__lc.license = 9153825;
+    // (function() {
+    //   var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
+    //   lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
+    //   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
+    // })();
+  
+  window.__lc = window.__lc || {};
+  window.__lc.license = 9152550;
+  (function() {
+    var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
+    lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
+  })();
+  // End of LiveChat code -->
+</script>
+<div id="fb-root"></div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  
+  ga('create', 'UA-90005766-1', 'auto');
+  //ga('send', 'pageview');
+  
+  /*
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8&appId=394883100868809";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+  */
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA98bzObyksIrLAjNFxM5b72VNkcfvPdH8&amp;libraries=places&amp;v=3.30"></script>
+<script src="/assets/post_application-af356aa42a6f2f24218ea9712834f443659e8e9d89ab70da0281229a850972d7.js" defer="defer"></script>
+
+
+<div class="drag-target" data-sidenav="slide-out" style="right: 0px; touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></div><div class="other-places drop-menu">
+        <!----><div class="waves-effect waves item" ng-click="$ctrl.addPlace(place)" ng-repeat="place in ::$ctrl.notMainPlaces">Białystok</div><!----><div class="waves-effect waves item" ng-click="$ctrl.addPlace(place)" ng-repeat="place in ::$ctrl.notMainPlaces">Bielsko-Biała</div><!----><div class="waves-effect waves item" ng-click="$ctrl.addPlace(place)" ng-repeat="place in ::$ctrl.notMainPlaces">Bydgoszcz</div><!----><div class="waves-effect waves item" ng-click="$ctrl.addPlace(place)" ng-repeat="place in ::$ctrl.notMainPlaces">Częstochowa</div><!----><div class="waves-effect waves item" ng-click="$ctrl.addPlace(place)" ng-repeat="place in ::$ctrl.notMainPlaces">Gliwice</div><!----><div class="waves-effect waves item" ng-click="$ctrl.addPlace(place)" ng-repeat="place in ::$ctrl.notMainPlaces">Katowice</div><!----><div class="waves-effect waves item" ng-click="$ctrl.addPlace(place)" ng-repeat="place in ::$ctrl.notMainPlaces">Kielce</div><!----><div class="waves-effect waves item" ng-click="$ctrl.addPlace(place)" ng-repeat="place in ::$ctrl.notMainPlaces">Lublin</div><!----><div class="waves-effect waves item" ng-click="$ctrl.addPlace(place)" ng-repeat="place in ::$ctrl.notMainPlaces">Łódź</div><!----><div class="waves-effect waves item" ng-click="$ctrl.addPlace(place)" ng-repeat="place in ::$ctrl.notMainPlaces">Olsztyn</div><!----><div class="waves-effect waves item" ng-click="$ctrl.addPlace(place)" ng-repeat="place in ::$ctrl.notMainPlaces">Opole</div><!----><div class="waves-effect waves item" ng-click="$ctrl.addPlace(place)" ng-repeat="place in ::$ctrl.notMainPlaces">Toruń</div><!----><div class="waves-effect waves item" ng-click="$ctrl.addPlace(place)" ng-repeat="place in ::$ctrl.notMainPlaces">Rzeszów</div><!----><div class="waves-effect waves item" ng-click="$ctrl.addPlace(place)" ng-repeat="place in ::$ctrl.notMainPlaces">Szczecin</div><!----><div class="waves-effect waves item" ng-click="$ctrl.addPlace(place)" ng-repeat="place in ::$ctrl.notMainPlaces">Zielona Góra</div><!---->
+      </div><div class="other-technologies drop-menu">
+        <!----><div class="technology item" ng-click="$ctrl.addTechnology(technology)" ng-repeat="technology in ::$ctrl.notMainTechnologies">
+          <div class="btn-floating waves waves-effect blockchain">
+            <div class="icon icon-blockchain"></div>
+          </div>
+          <span class="name">Blockchain</span>
+        </div><!----><div class="technology item" ng-click="$ctrl.addTechnology(technology)" ng-repeat="technology in ::$ctrl.notMainTechnologies">
+          <div class="btn-floating waves waves-effect security">
+            <div class="icon icon-security"></div>
+          </div>
+          <span class="name">Security</span>
+        </div><!----><div class="technology item" ng-click="$ctrl.addTechnology(technology)" ng-repeat="technology in ::$ctrl.notMainTechnologies">
+          <div class="btn-floating waves waves-effect data">
+            <div class="icon icon-data"></div>
+          </div>
+          <span class="name">Data</span>
+        </div><!----><div class="technology item" ng-click="$ctrl.addTechnology(technology)" ng-repeat="technology in ::$ctrl.notMainTechnologies">
+          <div class="btn-floating waves waves-effect go">
+            <div class="icon icon-go"></div>
+          </div>
+          <span class="name">Golang</span>
+        </div><!----><div class="technology item" ng-click="$ctrl.addTechnology(technology)" ng-repeat="technology in ::$ctrl.notMainTechnologies">
+          <div class="btn-floating waves waves-effect sap">
+            <div class="icon icon-sap"></div>
+          </div>
+          <span class="name">SAP</span>
+        </div><!----><div class="technology item" ng-click="$ctrl.addTechnology(technology)" ng-repeat="technology in ::$ctrl.notMainTechnologies">
+          <div class="btn-floating waves waves-effect other">
+            <div class="icon icon-other"></div>
+          </div>
+          <span class="name">Other</span>
+        </div><!---->
+      </div><div class="salary drop-menu">
+          <span>Choose salary range</span>
+          <div class="salary-slider-container">
+            <div change="$ctrl.salaryFilterChanged(value)" class="salary-slider noUi-target noUi-ltr noUi-horizontal" end="33000" max="33000" min="0" slider="" start="0"><div class="noUi-base"><div class="noUi-origin" style="left: 0%;"><div class="noUi-handle noUi-handle-lower" data-handle="0" style="z-index: 5;"><div class="noUi-handle-touch-area"></div><div class="noUi-tooltip"><span>0k</span></div></div></div><div class="noUi-connect" style="left: 0%; right: 0%;"></div><div class="noUi-origin" style="left: 100%;"><div class="noUi-handle noUi-handle-upper" data-handle="1" style="z-index: 4;"><div class="noUi-handle-touch-area"></div><div class="noUi-tooltip"><span>33k</span></div></div></div></div></div>
+          </div>
+        </div><div class="exp-level drop-menu">
+          <div class="waves-effect waves item" ng-click="$ctrl.selectExperienceLevel(null)">All</div>
+          <!----><div class="waves-effect waves item" ng-click="$ctrl.selectExperienceLevel(expLevel)" ng-repeat="expLevel in ::$ctrl.experienceLevels">Junior</div><!----><div class="waves-effect waves item" ng-click="$ctrl.selectExperienceLevel(expLevel)" ng-repeat="expLevel in ::$ctrl.experienceLevels">Mid</div><!----><div class="waves-effect waves item" ng-click="$ctrl.selectExperienceLevel(expLevel)" ng-repeat="expLevel in ::$ctrl.experienceLevels">Senior</div><!---->
+        </div><div class="drag-target" data-sidenav="mobile-slide-out" style="left: 0px; touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></div><div class="hiddendiv common"></div><script src="https://secure.livechatinc.com/licence/9152550/v2/get_dynamic_config.js?t=1560073441192&amp;referrer=&amp;url=https%3A%2F%2Fjustjoin.it%2Fwarszawa%2Fdata&amp;params=&amp;jsonp=__lc_data_304467"></script><script src="https://secure.livechatinc.com/licence/9152550/v2/get_static_config.3.700.9.9.2805.89.36.13.15.10.11.9.117.js?&amp;jsonp=__lc_data_static_config"></script><div id="chat-widget-container" style="opacity: 0; visibility: hidden; z-index: -1; position: fixed; bottom: 10px; width: 352px; height: 652px; max-width: 100%; max-height: calc(100% - 10px); min-height: 0px; min-width: 0px; background-color: transparent; border: 0px; overflow: hidden; right: 40px; transition: none 0s ease 0s !important;"><iframe src="https://secure.livechatinc.com/licence/9152550/v2/open_chat.cgi?license=9152550&amp;group=3&amp;embedded=1&amp;widget_version=3&amp;unique_groups=0" allowtransparency="true" allow="autoplay" id="chat-widget" name="chat-widget" scrolling="no" role="application" aria-label="LiveChat chat widget" style="width: 100%; height: 100%; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; min-height: 0px; min-width: 0px; margin: 0px; padding: 0px; background-image: none; background-position: 0% 0%; background-size: initial; background-attachment: scroll; background-origin: initial; background-clip: initial; background-color: rgba(0, 0, 0, 0); border-width: 0px; float: none; transition: none 0s ease 0s !important;"></iframe></div></body></html>
