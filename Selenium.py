@@ -4,6 +4,9 @@ import pandas as pd
 import codecs
 from bs4 import BeautifulSoup
 
+columnList = ['company-address', 'age new', 'title', 'company-info', 'tag', 'salary',
+              'company-name', 'salary-row','remote']
+
 def getClasses(html):
     span = html.split('<span class="')
     allClasses = []
@@ -11,19 +14,54 @@ def getClasses(html):
         allClasses.append(s.split('"')[0])
     return list(set(allClasses[1:]))
 
-def cleanValue(value):
-    return value.replace(u'\uE0C8','').replace(u'\uE0AF','').lstrip().rstrip()
-
-
 def getValues(soup,classNames):
+
+    def cleanValue(value):
+        return value.replace(u'\uE0C8', '').replace(u'\uE0AF', '').lstrip().rstrip()
+
     dict = {}
     for className in classNames:
-        allValues = soup.find_all("span",class_=className)
+        allValues = soup.find_all("span", class_=className)
         if len(allValues) > 1:
             dict[className] = [cleanValue(value.text) for value in allValues]
         else:
             dict[className] = cleanValue(allValues[0].text)
     return dict
+
+def prepareDataToDB(df):
+
+    def checkIfAllColumnsExisting(checkedDF):
+        for column in columnList:
+            if column not in checkedDF.columns:
+                checkedDF[column] = None
+        return checkedDF
+
+    def getNumber(string):
+        return int(''.join([digit for digit in string.split() if digit.isdigit()]))
+
+    def getSalary(string):
+        if '-' in string:
+            result = [getNumber(salary) for salary in string.split('-')] + [string.split(' ')[-1].upper()]
+        elif any(char.isdigit() for char in string):
+            result = [getNumber(string), getNumber(string),string.split(' ')[-1]]
+        else:
+            result = [None,None,None]
+        return pd.Series(result, index=['salaryMin','salaryMax','currency'])
+
+    print(df.columns)
+    df = checkIfAllColumnsExisting(df)
+    print(df.columns)
+    df['ifRemote'] = df['remote'].apply(lambda x: 0 if x is None else 1)
+    df[['street', 'city']] = df['company-address'].str.split(",",n=1, expand=True)
+    df['postingDate'] = df['age new'].apply(lambda x: pd.to_datetime('today')-pd.Timedelta(days=getNumber(x)) \
+        if x[0].isdigit() else pd.to_datetime('today'))
+    df['jobTitle'] = df['title']
+    df['tags'] = df['tag'].apply(lambda x: x.lower() if x is not None else None)
+    df[['salaryMin','salaryMax','currency']] = df['salary'].apply(lambda x: getSalary(x) if x is not None else None)
+    df['name'] = df['company-name']
+    df.drop(columns=columnList)
+
+    return df
 
 """
 options = Options()
@@ -76,9 +114,10 @@ html = """  <div class="company-logo-container">
 
 classes = getClasses(html)
 soup = BeautifulSoup(html)
-df = pd.DataFrame(data=getValues(soup,classes), columns=classes)
-#if 'remote' not in df.columns:
-#    df.
+df = pd.DataFrame(data=getValues(soup, classes), columns=classes)
+df = prepareDataToDB(df)
+print(df)
+
 df.to_csv('rawDataExample.csv',';')
 
 
