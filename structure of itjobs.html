@@ -1,0 +1,45 @@
+<a class="item" target="" ui-sref="offers.detail({id: $ctrl.offer.id, fromList: true})" href="/offers/360-digital-natives-data-analyst-with-python">
+	<div class="company-logo-container">
+		->logo firmy 
+		<img class="company-logo" ng-src=<link> src=<link> >
+	<div>
+	<div class="item-row">
+		<div class="primary-line">
+		<span class="title">
+			-> opis oferty (stanowisko)
+		</span>
+		<span class="remote" ng-if="::$ctrl.offer.remote">Remote</span>
+		
+			<div class="flex-right">
+			<span class="salary-row">
+				<span class="salary" ng-if="::$ctrl.offer.salaryFrom!=null">
+				-> widełki, np.8 000 - 13 000 PLN, wyjątek: Undisclosed salary
+				</span>
+				
+				<span class="age new" ng-class="::{ 'new':$ctrl.offer.isNew() }">
+				-> jak długo oferta jest dostępna: new, 1d ago, 2d ago, 
+				</span>
+			
+			</div>
+		</div>
+		div class="secondary-line">
+			<span class="company-info">
+				<span class="company-name">
+				<i></i>
+				-> nazwa firmy
+				</span>
+				
+				<span class="company-address">
+				<i></i>
+				-> adres firmy: ulica, miasto
+				</span>
+			</span>
+			<div class="tags">
+				<span class="tag" ng-repeat="skill in ::$ctrl.offer.skills">
+				--> nazwa tagu (np. Python)
+				</span>
+				!!! tagów może być wiele
+			</div>
+		</div>
+	</div>
+</a>

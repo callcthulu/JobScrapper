@@ -1,22 +1,4 @@
-;title;salary-row;company-info;tag;company-address;salary;age new;company-name;remote;ifRemote;street;city;postingDate;jobTitle;tags;salaryMin;salaryMax;currency;name
-0;Data Engineer;13 000 - 20 000 PLN;"Showpad
-        
-
-
-            
-          
-          1 Swobodna Street, Wrocław";MongoDB;1 Swobodna Street, Wrocław;13 000 - 20 000 PLN;New;Showpad;;0;1 Swobodna Street; Wrocław;2019-06-12 10:06:50.627076;Data Engineer;mongodb;13000;20000;PLN;Showpad
-1;Data Engineer;13 000 - 20 000 PLN;"Showpad
-        
-
-
-            
-          
-          1 Swobodna Street, Wrocław";Spark;1 Swobodna Street, Wrocław;13 000 - 20 000 PLN;New;Showpad;;0;1 Swobodna Street; Wrocław;2019-06-12 10:06:50.627578;Data Engineer;spark;13000;20000;PLN;Showpad
-2;Data Engineer;13 000 - 20 000 PLN;"Showpad
-        
-
-
-            
-          
-          1 Swobodna Street, Wrocław";Hadoop;1 Swobodna Street, Wrocław;13 000 - 20 000 PLN;New;Showpad;;0;1 Swobodna Street; Wrocław;2019-06-12 10:06:50.627578;Data Engineer;hadoop;13000;20000;PLN;Showpad
+;site;url;category;jobTitle;salaryMin;salaryMax;currency;name;street;city;postingDate;tags;ifRemote
+0;justjoin.it;https://justjoin.it/all/data;data;Data Engineer;13000;20000;PLN;Showpad;1 Swobodna Street; Wrocław;2019-06-17 16:48:52;mongodb;0
+1;justjoin.it;https://justjoin.it/all/data;data;Data Engineer;13000;20000;PLN;Showpad;1 Swobodna Street; Wrocław;2019-06-17 16:48:52;spark;0
+2;justjoin.it;https://justjoin.it/all/data;data;Data Engineer;13000;20000;PLN;Showpad;1 Swobodna Street; Wrocław;2019-06-17 16:48:52;hadoop;0

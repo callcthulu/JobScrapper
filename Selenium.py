@@ -1,11 +1,15 @@
+from unittest.mock import inplace
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import pandas as pd
 import codecs
 from bs4 import BeautifulSoup
+import MSDBConnector as mdc
 
 columnList = ['company-address', 'age new', 'title', 'company-info', 'tag', 'salary',
-              'company-name', 'salary-row','remote']
+              'company-name', 'salary-row', 'remote']
+
 
 def getClasses(html):
     span = html.split('<span class="')
@@ -14,8 +18,8 @@ def getClasses(html):
         allClasses.append(s.split('"')[0])
     return list(set(allClasses[1:]))
 
-def getValues(soup,classNames):
 
+def getValues(soup, classNames):
     def cleanValue(value):
         return value.replace(u'\uE0C8', '').replace(u'\uE0AF', '').lstrip().rstrip()
 
@@ -28,8 +32,8 @@ def getValues(soup,classNames):
             dict[className] = cleanValue(allValues[0].text)
     return dict
 
-def prepareDataToDB(df):
 
+def prepareDataToDB(df):
     def checkIfAllColumnsExisting(checkedDF):
         for column in columnList:
             if column not in checkedDF.columns:
@@ -37,38 +41,45 @@ def prepareDataToDB(df):
         return checkedDF
 
     def getNumber(string):
-        return int(''.join([digit for digit in string.split() if digit.isdigit()]))
+        return int(''.join([char for char in string.split() if char.isdigit()]))
 
     def getSalary(string):
         if '-' in string:
             result = [getNumber(salary) for salary in string.split('-')] + [string.split(' ')[-1].upper()]
         elif any(char.isdigit() for char in string):
-            result = [getNumber(string), getNumber(string),string.split(' ')[-1]]
+            result = [getNumber(string), getNumber(string), string.split(' ')[-1]]
         else:
-            result = [None,None,None]
-        return pd.Series(result, index=['salaryMin','salaryMax','currency'])
+            result = [None, None, None]
+        return pd.Series(result, index=['salaryMin', 'salaryMax', 'currency'])
 
-    print(df.columns)
     df = checkIfAllColumnsExisting(df)
-    print(df.columns)
-    df['ifRemote'] = df['remote'].apply(lambda x: 0 if x is None else 1)
-    df[['street', 'city']] = df['company-address'].str.split(",",n=1, expand=True)
-    df['postingDate'] = df['age new'].apply(lambda x: pd.to_datetime('today')-pd.Timedelta(days=getNumber(x)) \
-        if x[0].isdigit() else pd.to_datetime('today'))
     df['jobTitle'] = df['title']
-    df['tags'] = df['tag'].apply(lambda x: x.lower() if x is not None else None)
-    df[['salaryMin','salaryMax','currency']] = df['salary'].apply(lambda x: getSalary(x) if x is not None else None)
+    df[['salaryMin', 'salaryMax', 'currency']] = df['salary'].apply(lambda x: getSalary(x) if x is not None else None)
     df['name'] = df['company-name']
-    df.drop(columns=columnList)
+    df[['street', 'city']] = df['company-address'].str.split(",", n=1, expand=True)
+    df['postingDate'] = df['age new'].apply(lambda x: str(pd.to_datetime('today') - pd.Timedelta(days=getNumber(x)))[0:-7] \
+        if x[0].isdigit() else str(pd.to_datetime('today'))[0:-7])
+    df['tags'] = df['tag'].apply(lambda x: x.lower() if x is not None else None)
+    df['ifRemote'] = df['remote'].apply(lambda x: 0 if x is None else 1)
+    df.drop(columns=columnList, axis=1, inplace=True)
 
     return df
+
 
 """
 options = Options()
 options.headless = True
 browser = webdriver.Chrome(options=options)
 
-browser.get("https://justjoin.it/all/data")
+#to-do - start from main site, get categories, iterate over categories
+"""
+url = "https://justjoin.it/all/"
+category = "data"
+currentUrl = url+category
+site = url.split("/")[2]
+
+""""
+browser.get(currentUrl)
 offers = browser.find_elements_by_class_name("item")
 for o in offers:
     html = o.get_attribute('innerHTML')
@@ -115,30 +126,74 @@ html = """  <div class="company-logo-container">
 classes = getClasses(html)
 soup = BeautifulSoup(html)
 df = pd.DataFrame(data=getValues(soup, classes), columns=classes)
+df.insert(loc=len(df.columns), column='site', value=site)
+df.insert(loc=len(df.columns), column='url', value=currentUrl)
+df.insert(loc=len(df.columns), column='category', value=category)
 df = prepareDataToDB(df)
-print(df)
+# print(df)
 
-df.to_csv('rawDataExample.csv',';')
+df.to_csv('rawDataExample.csv', ';')
+
+path = 'C:/Users/oleli/Desktop/jobScrapper/settings.txt'
+con = mdc.MSDBConnector()
+con.setPath(path)
+
+# test
+# con.setSQL("SELECT @@SERVERNAME")
+# result = con.connect(get=1)
+# print(result)
+
+sql = """
+        INSERT INTO [JobsDB].[sort].[unsortedData] (
+           [websiteName]
+          ,[websiteUrl]
+          ,[categoryCategory]
+          ,[JobTitleTitle]
+          ,[salaryMin]
+          ,[salaryMax]
+          ,[currencyCode]
+          ,[companyName]
+          ,[companyStreet]
+          ,[companyCity]
+          ,[postingDate]
+          ,[tagTag]
+          ,[ifRemote] )
+        VALUES (
+                %s
+                );
+        """
+for row in df.iterrows():
+    values = ''
+    for item in row[1]:
+        values = values + ",'" + str(item) + "'"
+    #print(sql % (values[1:],))
+    con.setSQL((sql % (values[1:],)))
+    con.connect()
+    """site;url;category;category;jobTitle;salaryMin;salaryMax;currency;name;street;city;postingDate;tags;ifRemote"""
+    # print(row)
+    # for col, item in row:
+    #      values = values + ",'" + str(item) + "'"
+    # print(values)
+    # con.setSQL((sql %(values[1:0],)))
+    # con.connect()
 
 
-
-
-#for key,value in dict.items():
+# for key,value in dict.items():
 #    if type(value) is list:
 #        print(key+ " : " + ", ".join(value))
 #    else:
 #        print(key + " : "+value)
-#title = soup.find_all("span",class_="title")
-#for t in title:
+# title = soup.find_all("span",class_="title")
+# for t in title:
 #    print(t.text)
-    #do magic wtih bs4
-    #save as dataframe + datesb
-    #dataframe to db then
+# do magic wtih bs4
+# save as dataframe + datesb
+# dataframe to db then
 
 """"
 file_object = codecs.open("site.txt", "w", "utf-8")
 html = browser.page_source
 file_object.write(html)
 """
-#with open("site.txt", "w+", "utf-8") as f:
+# with open("site.txt", "w+", "utf-8") as f:
 #    f.write(page)
